@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="Zero" DisplayName="Button ID 0" />
+  <Entry Name="One" DisplayName="Button ID 1" />
+  <Entry Name="Two" DisplayName="Button ID 2" />
+  <Entry Name="Three" DisplayName="Button ID 3" />
+  <Entry Name="Four" DisplayName="Button ID 4" />
+  <Entry Name="Five" DisplayName="Button ID 5" />
+  <Entry Name="Six" DisplayName="Button ID 6" />
+  <Entry Name="Seven" DisplayName="Button ID 7" />
+  <Entry Name="Eight" DisplayName="Button ID 8" />
+  <Entry Name="Nine" DisplayName="Button ID 9" />
+  <Entry Name="Ten" DisplayName="Button ID 10" />
+  <Entry Name="Eleven" DisplayName="Button ID 11" />
+</Definition>

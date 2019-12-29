@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="NoColor" DisplayName="No Color" />
+  <Entry Name="Black" DisplayName="Black" />
+  <Entry Name="Blue" DisplayName="Blue" />
+  <Entry Name="Green" DisplayName="Green" />
+  <Entry Name="Yellow" DisplayName="Yellow" />
+  <Entry Name="Red" DisplayName="Red" />
+  <Entry Name="White" DisplayName="White" />
+  <Entry Name="Brown" DisplayName="Brown" />
+</Definition>

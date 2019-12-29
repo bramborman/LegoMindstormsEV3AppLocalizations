@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+    <Entry Name="False" DisplayName="False"/>
+    <Entry Name="True" DisplayName="True"/>
+</Definition>

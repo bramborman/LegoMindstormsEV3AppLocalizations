@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="Button0" DisplayName="Button ID 0" />
+  <Entry Name="Button1" DisplayName="Button ID 1" />
+  <Entry Name="Button2" DisplayName="Button ID 2" />
+  <Entry Name="Button3" DisplayName="Button ID 3" />
+</Definition>

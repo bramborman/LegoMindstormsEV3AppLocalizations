@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPack>
+<version>1.0.0</version>
+<OnlyShowForEditorLanguage>en-US</OnlyShowForEditorLanguage>
+<img src="assets/0.png"></img>
+<idlelastimage src="assets/1.png"></idlelastimage>
+<actionimage src="assets/2.png"></actionimage>
+<actionLastimage src="assets/3.png"></actionLastimage>
+<staticimage src="assets/4.png"></staticimage>
+<mouseoverimage src="assets/5.png"></mouseoverimage>
+<mouseenterimage src="assets/6.png"></mouseenterimage>
+<mouseleaveimage src="assets/7.png"></mouseleaveimage>
+<titleimage src="assets/8.png"></titleimage>
+<point1title>Strike!</point1title>
+<point2title>Detect Objects</point2title>
+<point3title>Slither</point3title>
+<point1coord>524, 525, 25, 25</point1coord>
+<point2coord>541,104,25,25</point2coord>
+<point3coord>394, 577, 25, 25</point3coord>
+<point1desc>Using the powerful Large Motor, R3PTAR can strike with its Fearsome Fangs at lightning speed.</point1desc>
+<point2desc>With the Infrared Sensor, R3PTAR can detect objects in front of it.</point2desc>
+<point3desc>Combining a Large Motor for moving forward and the Medium Motor for steering, R3PTAR can slither like a real snake.</point3desc>
+<point1action>true</point1action>
+<point2action>false</point2action>
+<point3action>false</point3action>
+    <projectPath>projects/0.ev3</projectPath>
+<difficultylevel>3</difficultylevel>
+</ContentPack>

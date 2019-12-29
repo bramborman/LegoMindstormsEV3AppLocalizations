@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorDefinitions>
+  <PolyGroups ModuleName="ThirdPartySample">
+    <PolyGroup Name="ThirdPartySample" BlockFamily="DataOperations">
+      <Parameter Name="a" Direction="Input" DataType="Single" DefaultValue="0" Configuration="builtin://Identification_Color.xml" Identification="builtin://Identification_Color.xml"/>
+      <Parameter Name="b" Direction="Input" DataType="Single" DefaultValue="0" Configuration="Identification_Color.xml" Identification="Identification_Color.xml"/>
+      <Parameter Name="c" Direction="Output" DataType="Boolean" Identification="Identification_Output.png"/>
+      <Block>
+        <Mode>One</Mode>
+        <Reference Type="VILib" Name="ThirdPartySample.vix" />
+        <ParameterReference Name="a"/>
+        <ParameterReference Name="b"/>
+        <ParameterReference Name="c"/>
+        <PaletteInfo Weight="0.5" />
+      </Block>
+    </PolyGroup>
+  </PolyGroups>
+</EditorDefinitions>

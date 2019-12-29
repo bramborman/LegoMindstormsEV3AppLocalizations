@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="1" DisplayName="Timer ID 1" />
+  <Entry Name="2" DisplayName="Timer ID 2" />
+  <Entry Name="3" DisplayName="Timer ID 3" />
+  <Entry Name="4" DisplayName="Timer ID 4" />
+  <Entry Name="5" DisplayName="Timer ID 5" />
+  <Entry Name="6" DisplayName="Timer ID 6" />
+  <Entry Name="7" DisplayName="Timer ID 7" />
+  <Entry Name="8" DisplayName="Timer ID 8" />
+</Definition>

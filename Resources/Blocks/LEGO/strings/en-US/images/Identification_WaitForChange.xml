@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+    <Entry Name="Up" DisplayName="Increase"/>
+    <Entry Name="Down" DisplayName="Decrease"/>
+    <Entry Name="Both" DisplayName="Any"/>
+</Definition>

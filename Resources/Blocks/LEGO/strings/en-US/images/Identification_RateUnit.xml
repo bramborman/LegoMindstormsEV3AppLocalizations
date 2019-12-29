@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="PerSecond" DisplayName="Samples per Second" />
+  <Entry Name="SecondsBetweenSamples" DisplayName="Seconds between Samples" />
+</Definition>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="WaitForCompletion" DisplayName="Wait for Completion" />
+  <Entry Name="PlayOnce" DisplayName="Play Once" />
+  <Entry Name="Repeat" DisplayName="Repeat" />
+</Definition>

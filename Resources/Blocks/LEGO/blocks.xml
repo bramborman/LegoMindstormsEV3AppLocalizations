@@ -1,0 +1,2938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorDefinitions>
+  <PolyGroups ModuleName="LEGO">
+    <PolyGroup Name="MediumMotor" BlockFamily="Action">
+      <Parameter Name="MotorPort" CompilerDirectives="OneOutputPort" Direction="Input" DefaultValue="1.A" />
+      <Parameter Name="Speed" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml" DataType="Single" Direction="Input" EducationDefaultValue="50" RetailDefaultValue="75" />
+      <Parameter Name="Rotations" Identification="Identification_NumberRotations.png" DataType="Single" Direction="Input" DefaultValue="1" />
+      <Parameter Name="Brake At End" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="Identification_BrakeAtEnd.xml" Configuration="Identification_BrakeAtEnd.xml" />
+      <Parameter Name="Degrees" Identification="Identification_DegreesAngle.xml" DefaultValue="360" DataType="Single" Direction="Input" />
+      <Parameter Name="Seconds" Identification="Identification_Time.png" DefaultValue="1" DataType="Single" Direction="Input" MinValue="0" />
+      <Hardware>
+        <Direction>Output</Direction>
+        <OtherAutoID>8</OtherAutoID>
+        <EV3AutoID>8</EV3AutoID>
+        <DefaultPort>1.A</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureDegrees</Mode>
+        <Reference Type="VILib" Name="RotationValue.vix" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Only</HardwarePageTreatment>
+        <HardwareModeInfo Name="M-MOTOR-DEG" ID="0" Range="-180,180" Unit="deg" IsAccumulator="True"/>
+      </Block>
+      <Block>
+        <Mode>MeasureRotation</Mode>
+        <Reference Type="VILib" Name="RotationValueRotations.vix" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Only</HardwarePageTreatment>
+        <HardwareModeInfo Name="M-MOTOR-ROT" ID="1" Range="-100,100" Unit="rot" IsAccumulator="True"/>
+      </Block>
+      <Block>
+        <Mode>MeasureCurrentSpeed</Mode>
+        <Reference Type="VILib" Name="MotorSpeedSensor.vix" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Only</HardwarePageTreatment>
+        <HardwareModeInfo Name="M-MOTOR-SPD" ID="2" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>Stop</Mode>
+        <Reference Type="VILib" Name="MediumMotorStop.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Brake At End" />
+        <Flags>Motor, PBROnly</Flags>
+        <Hardware>MotorMedium</Hardware>
+      </Block>
+      <Block>
+        <Mode>Unlimited</Mode>
+        <Reference Type="VILib" Name="MediumMotorUnlimited.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <Flags>Motor, PBROnly</Flags>
+        <Hardware>MotorMedium</Hardware>
+      </Block>
+      <Block>
+        <Mode>Time</Mode>
+        <Reference Type="VILib" Name="MediumMotorTime.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <ParameterReference Name="Seconds" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorMedium</Hardware>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>Degrees</Mode>
+        <Reference Type="VILib" Name="MediumMotorDistance.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <ParameterReference Name="Degrees" />
+        <ParameterReference Name="Brake At End" />
+        <Flags>Motor, PBROnly</Flags>
+        <Hardware>MotorMedium</Hardware>
+      </Block>
+      <Block>
+        <Mode>Rotations</Mode>
+        <Reference Type="VILib" Name="MediumMotorDistanceRotations.vix" />
+        <PaletteInfo Weight="0.5" PaletteName="Motor" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <ParameterReference Name="Rotations" />
+        <ParameterReference Name="Brake At End" />
+        <Flags>Motor, PBROnly</Flags>
+        <Hardware>MotorMedium</Hardware>
+      </Block>
+      <!--<Block>
+        <Mode>Advanced</Mode>
+        <DisplayName>Advanced</DisplayName>
+        <Reference Type="VILib" Name="MediumMotorAdvanced.vix"/>
+        <ParamInfo Name="MotorPort" DisplayName="MotorPort" PortType="OutputPort" Visibility="Static"/>
+        <ParamInfo Name="Speed" DisplayName="Power" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml"/>
+        <ParamInfo Name="Rotations" DisplayName="Rotations" Identification="Identification_NumberRotations.png"/>
+        <ParamInfo Name="Brake At End" DisplayName="Brake at End" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="Identification_BrakeAtEnd.xml" Configuration="Identification_BrakeAtEnd.xml"/>
+        <ParamInfo Name="Interrupt" DisplayName="Interrupt" Direction="Input" DataType="Int32" DefaultValue="0" Visibility="Hidden"/>
+        <Flags>Motor</Flags>
+        <Hardware>MotorMedium</Hardware>
+      </Block>-->
+    </PolyGroup>
+    <PolyGroup Name="Motor" BlockFamily="Action">
+      <Parameter Name="MotorPort" CompilerDirectives="OneOutputPort" Direction="Input" DefaultValue="1.D" />
+      <Parameter Name="Speed" Direction="Input" DataType="Single" EducationDefaultValue="50" RetailDefaultValue="75" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml" />
+      <Parameter Name="Brake At End" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="Identification_BrakeAtEnd.xml" Configuration="Identification_BrakeAtEnd.xml" />
+      <Hardware>
+        <Direction>Output</Direction>
+        <OtherAutoID>7</OtherAutoID>
+        <EV3AutoID>7</EV3AutoID>
+        <DefaultPort>1.D</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureDegrees</Mode>
+        <Reference Type="VILib" Name="RotationValue.vix" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Only</HardwarePageTreatment>
+        <HardwareModeInfo Name="L-MOTOR-DEG" ID="0" Range="-180,180" Unit="deg" IsAccumulator="True"/>
+      </Block>
+      <Block>
+        <Mode>MeasureRotation</Mode>
+        <Reference Type="VILib" Name="RotationValueRotations.vix" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Only</HardwarePageTreatment>
+        <HardwareModeInfo Name="L-MOTOR-ROT" ID="1" Range="-100,100" Unit="rot" IsAccumulator="True"/>
+      </Block>
+      <Block>
+        <Mode>MeasureCurrentSpeed</Mode>
+        <Reference Type="VILib" Name="MotorSpeedSensor.vix" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Only</HardwarePageTreatment>
+        <HardwareModeInfo Name="L-MOTOR-SPD" ID="2" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>Stop</Mode>
+        <Reference Type="VILib" Name="MotorStop.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Brake At End" />
+        <Flags>Motor</Flags>
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Unlimited</Mode>
+        <Reference Type="VILib" Name="MotorUnlimited.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <Flags>Motor</Flags>
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Time</Mode>
+        <Reference Type="VILib" Name="MotorTime.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <ParamInfo Name="Seconds" Identification="Identification_Time.png" DataType="Single" Direction="Input" DefaultValue="1" MinValue="0" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Degrees</Mode>
+        <Reference Type="VILib" Name="MotorDistance.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <ParamInfo Name="Degrees" Identification="Identification_DegreesAngle.xml" DataType="Single" Direction="Input" DefaultValue="360" />
+        <ParameterReference Name="Brake At End" />
+        <Flags>Motor</Flags>
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Rotations</Mode>
+        <Reference Type="VILib" Name="MotorDistanceRotations.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <ParamInfo Name="Rotations" Identification="Identification_NumberRotations.png" Direction="Input" DataType="Single" DefaultValue="1" />
+        <ParameterReference Name="Brake At End" />
+        <Flags>Motor</Flags>
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <!--<Block>
+        <Mode>Advanced</Mode>
+        <DisplayName>Advanced</DisplayName>
+        <Reference Type="VILib" Name="MotorAdvanced.vix"/>
+        <Flags>Motor</Flags>
+        <Hardware>MotorLarge</Hardware>
+      </Block>-->
+    </PolyGroup>
+    <PolyGroup Name="Move" BlockFamily="Action">
+      <Parameter Name="Ports" CompilerDirectives="TwoOutputPorts" Direction="Input" DefaultValue="1.B+C" />
+      <Parameter Name="Brake At End" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="Identification_BrakeAtEnd.xml" Configuration="Identification_BrakeAtEnd.xml" />
+      <Parameter Name="Steering" Configuration="SliderHorizontal.custom" Identification="Identification_Steering.xml" Direction="Input" DataType="Single" DefaultValue="0" />
+      <Parameter Name="Speed" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml" Direction="Input" DataType="Single" EducationDefaultValue="50" RetailDefaultValue="75" />
+      <Parameter Name="Degrees" Identification="Identification_DegreesAngle.xml" Direction="Input" DataType="Single" DefaultValue="360" />
+      <Parameter Name="Seconds" Identification="Identification_Time.png" Direction="Input" DataType="Single" DefaultValue="1" MinValue="0" />
+      <Parameter Name="Rotations" Identification="Identification_NumberRotations.png" Direction="Input" DataType="Single" DefaultValue="1" />
+      <Hardware>
+        <Direction>Output</Direction>
+        <AlternativePolyGroupName>Motor</AlternativePolyGroupName>
+        <DefaultPort>1.B+C</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>Stop</Mode>
+        <Reference Type="VILib" Name="MoveStop.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Unlimited</Mode>
+        <Reference Type="VILib" Name="MoveUnlimited.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Steering" />
+        <ParameterReference Name="Speed" />
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Time</Mode>
+        <Reference Type="VILib" Name="MoveTime.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Steering" />
+        <ParameterReference Name="Speed" />
+        <ParameterReference Name="Seconds" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Degrees</Mode>
+        <Reference Type="VILib" Name="MoveDistance.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Steering" />
+        <ParameterReference Name="Speed" />
+        <ParameterReference Name="Degrees" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>Rotations</Mode>
+        <PaletteInfo Weight="0.5" PaletteName="Move Block" />
+        <Reference Type="VILib" Name="MoveDistanceRotations.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Steering" />
+        <ParameterReference Name="Speed" />
+        <ParameterReference Name="Rotations" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+        <Flags></Flags>
+      </Block>
+      <!--<Block>
+        <Mode>Advanced</Mode>
+        <DisplayName>Advanced</DisplayName>
+        <Reference Type="VILib" Name="MoveAdvanced.vix"/>
+        <Hardware>MotorLarge</Hardware>
+        <Flags>PBROnly</Flags>
+        <ParameterInfo Name="Steering" />
+      </Block>-->
+    </PolyGroup>
+    <PolyGroup Name="MoveTank" BlockFamily="Action">
+      <Parameter Name="Ports" CompilerDirectives="TwoOutputPorts" Direction="Input" DefaultValue="1.B+C" />
+      <Parameter Name="Brake At End" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="Identification_BrakeAtEnd.xml" Configuration="Identification_BrakeAtEnd.xml" />
+      <Parameter Name="Speed Left" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml" Direction="Input" DataType="Single" EducationDefaultValue="50" RetailDefaultValue="75" />
+      <Parameter Name="Speed Right" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml" Direction="Input" DataType="Single" EducationDefaultValue="50" RetailDefaultValue="75" />
+      <Hardware>
+        <Direction>Output</Direction>
+        <AlternativePolyGroupName>Motor</AlternativePolyGroupName>
+        <DefaultPort>1.B+C</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>Stop</Mode>
+        <Reference Type="VILib" Name="MoveTankStop.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Unlimited</Mode>
+        <Reference Type="VILib" Name="MoveTankMode.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Speed Left" />
+        <ParameterReference Name="Speed Right" />
+        <Hardware>MotorLarge</Hardware>
+      </Block>
+      <Block>
+        <Mode>Time</Mode>
+        <Reference Type="VILib" Name="MoveTankTime.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Speed Left" />
+        <ParameterReference Name="Speed Right" />
+        <ParamInfo Name="Seconds" Identification="Identification_Time.png" Direction="Input" DataType="Single" DefaultValue="1" MinValue="0" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>Degrees</Mode>
+        <Reference Type="VILib" Name="MoveTankDistance.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Speed Left" />
+        <ParameterReference Name="Speed Right" />
+        <ParamInfo Name="Degrees" Identification="Identification_DegreesAngle.xml" Direction="Input" DataType="Single" DefaultValue="360" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>Rotations</Mode>
+        <PaletteInfo Weight="0.5" PaletteName="Move Tank Block" />
+        <Reference Type="VILib" Name="MoveTankDistanceRotations.vix" />
+        <ParameterReference Name="Ports" />
+        <ParameterReference Name="Speed Left" />
+        <ParameterReference Name="Speed Right" />
+        <ParamInfo Name="Rotations" Identification="Identification_NumberRotations.png" Direction="Input" DataType="Single" DefaultValue="1" />
+        <ParameterReference Name="Brake At End" />
+        <Hardware>MotorLarge</Hardware>
+        <Flags></Flags>
+      </Block>
+      <!--<Block>
+        <Mode>Advanced</Mode>
+        <DisplayName>Advanced</DisplayName>
+        <Reference Type="VILib" Name="MoveTankAdvanced.vix"/>
+        <Hardware>MotorLarge</Hardware>
+        <Flags>PBROnly</Flags>
+      </Block>-->
+    </PolyGroup>
+    <PolyGroup Name="Display" BlockFamily="Action">
+      <Parameter Name="X" Identification="Identification_x.png" Direction="Input" DataType="Single" Configuration="SliderHorizontal.Custom" MinValue="-177" MaxValue="177" Slider.HideMidpoint="True" DefaultValue="0" />
+      <Parameter Name="Y" Identification="Identification_y.png" Direction="Input" DataType="Single" Configuration="SliderVerticalInverted.Custom" MinValue="-127" MaxValue="127" Slider.HideMidpoint="True" DefaultValue="0" />
+      <Parameter Name="Clear Screen" Identification="Identification_ClearScreen.png" Direction="Input" DataType="Boolean" DefaultValue="True" />
+      <Parameter Name="Text" Identification="Identification_Text.png" Visibility="Special" Direction="Input" DataType="String" DefaultValue="MINDSTORMS"/>
+      <Parameter Name="Invert Color" Identification="Identification_InvertColor.xml" Configuration="Identification_InvertColor.xml" Direction="Input" DataType="Boolean" DefaultValue="False" />
+      <Parameter Name="Size" Identification="Identification_FontSize.png" Direction="Input" DataType="Single" Configuration="Identification_FontSize.xml" DefaultValue="2" />
+      <Parameter Name="Fill" Identification="Identification_Fill.png" Direction="Input" DataType="Boolean" DefaultValue="False" />
+      <Block>
+        <Mode>File</Mode>
+        <Reference Type="VILib" Name="DisplayFile.vix" />
+        <ParamInfo Name="Filename" CompilerDirectives="ExternalFileImageDependency" Identification="Identification_FileName.png" Configuration="ImageFileSelector.custom" Visibility="Special" EducationDefaultValue="Neutral" RetailDefaultValue="" Direction="Input" DataType="String" />
+		<ParameterReference Name="Clear Screen" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Y" />
+        <PaletteInfo Weight="0.5" />
+        <Flags></Flags>
+      </Block>
+      <Category Name="Text">
+        <Block>
+          <Mode>String</Mode>
+          <Reference Type="VILib" Name="DisplayString.vix" />
+          <ParameterReference Name="Text" />
+          <ParameterReference Name="Clear Screen" />
+          <ParameterReference Name="X" />
+          <ParameterReference Name="Y" />
+          <ParameterReference Name="Invert Color" />
+          <ParameterReference Name="Size" />
+          <Flags></Flags>
+        </Block>
+        <Block>
+          <Mode>StringGrid</Mode>
+          <Reference Type="VILib" Name="DisplayStringGrid.vix" />
+          <ParameterReference Name="Text" />
+          <ParameterReference Name="Clear Screen" />
+          <ParamInfo Name="Column" Identification="Identification_xColumn.png" Direction="Input" DataType="Single" DefaultValue="0" MinValue="0" MaxValue="21" />
+          <ParamInfo Name="Row" Identification="Identification_yRow.png" Direction="Input" DataType="Single" DefaultValue="0" MinValue="0" MaxValue="12" />
+          <ParameterReference Name="Invert Color" />
+          <ParameterReference Name="Size" />
+          <Flags></Flags>
+        </Block>
+      </Category>
+      <Category Name="Shapes">
+        <Block>
+          <Mode>Line</Mode>
+          <Reference Type="VILib" Name="DisplayLine.vix" />
+          <ParameterReference Name="Clear Screen" />
+          <ParamInfo Name="X1" DataType="Single" Direction="Input" Identification="Identification_x1.png" Configuration="SliderHorizontal.Custom" MinValue="0" MaxValue="177" Slider.HideMidpoint="True" DefaultValue="50" />
+          <ParamInfo Name="Y1" DataType="Single" Direction="Input" Identification="Identification_y1.png" Configuration="SliderVerticalInverted.Custom" MinValue="0" MaxValue="127" Slider.HideMidpoint="True" DefaultValue="20" />
+          <ParamInfo Name="X2" DataType="Single" Direction="Input" Identification="Identification_x2.png" Configuration="SliderHorizontal.Custom" MinValue="0" MaxValue="177" Slider.HideMidpoint="True" DefaultValue="130" />
+          <ParamInfo Name="Y2" DataType="Single" Direction="Input" Identification="Identification_y2.png" Configuration="SliderVerticalInverted.Custom" MinValue="0" MaxValue="127" Slider.HideMidpoint="True" DefaultValue="100" />
+          <ParameterReference Name="Invert Color" />
+        </Block>
+        <Block>
+          <Mode>Circle</Mode>
+          <Reference Type="VILib" Name="DisplayCircle.vix" />
+          <ParameterReference Name="Clear Screen" />
+          <ParameterReference Name="X" />
+          <ParameterReference Name="Y" />
+          <ParamInfo Name="Radius" Identification="Identification_Radius.png" DataType="Single" Direction="Input" DefaultValue="40" MinValue="0" MaxValue="177"/>
+          <ParameterReference Name="Fill" />
+          <ParameterReference Name="Invert Color" />
+        </Block>
+        <Block>
+          <Mode>Rectangle</Mode>
+          <Reference Type="VILib" Name="DisplayRect.vix" />
+          <ParameterReference Name="Clear Screen" />
+          <ParameterReference Name="X" />
+          <ParameterReference Name="Y" />
+          <ParamInfo Name="Width" DataType="Single" Direction="Input" DefaultValue="80" Identification="Identification_Width.png" MinValue="0" MaxValue="355"/>
+          <ParamInfo Name="Height" DataType="Single" Direction="Input" DefaultValue="80" Identification="Identification_Height.png" MinValue="0" MaxValue="255"/>
+          <ParameterReference Name="Fill" />
+          <ParameterReference Name="Invert Color" />
+        </Block>
+        <Block>
+          <Mode>Point</Mode>
+          <Reference Type="VILib" Name="DisplayPoint.vix" />
+          <ParameterReference Name="Clear Screen" />
+          <ParameterReference Name="X" />
+          <ParameterReference Name="Y" />
+          <ParameterReference Name="Invert Color" />
+        </Block>
+      </Category>
+      <Block>
+        <Mode>Clear</Mode>
+        <Reference Type="VILib" Name="DisplayClear.vix" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Sound" BlockFamily="Action">
+      <Parameter Name="Volume" Identification="Identification_Volume.xml" Configuration="SliderVertical.Custom" MinValue="0" MaxValue="100" Slider.HideMidpoint="True" DataType="Single" Direction="Input" DefaultValue="100" />
+      <Parameter Name="Play Type" Identification="Identification_PlayType.xml" Configuration="Identification_PlayType.xml" DataType="UInt16" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Duration" Identification="Identification_Time.png" Direction="Input" DataType="Single" DefaultValue="1" MinValue="0" />
+      <Block>
+        <Mode>Stop</Mode>
+        <Reference Type="VILib" Name="PlaySoundStop.vix" />
+      </Block>
+      <Block>
+        <Mode>File</Mode>
+        <PaletteInfo Weight="0.5" />
+        <Reference Type="VILib" Name="PlaySoundFile.vix" />
+        <ParamInfo Name="Name" CompilerDirectives="ExternalFileSoundDependency" Identification="Identification_FileName.png" Configuration="SoundFileSelector.custom" Visibility="Special" DataType="String" Direction="Input" EducationDefaultValue="Hello" RetailDefaultValue="" />
+        <ParameterReference Name="Volume" />
+        <ParameterReference Name="Play Type" />
+      </Block>
+      <Block>
+        <Mode>Tone</Mode>
+        <Reference Type="VILib" Name="PlayTone.vix" />
+        <ParamInfo Name="Frequency" Identification="Identification_Hz.png" Direction="Input" DataType="Single" DefaultValue="440" Configuration="NoteSelector.custom" MinValue="250" MaxValue="10000" />
+        <ParameterReference Name="Duration" />
+        <ParameterReference Name="Volume" />
+        <ParameterReference Name="Play Type" />
+      </Block>
+      <Block>
+        <Mode>Note</Mode>
+        <Reference Type="VILib" Name="PlayNote.vix" />
+        <ParamInfo Name="Note" Identification="Identification_Note.png" Direction="Input" DataType="String" DefaultValue="A5" Configuration="Piano.custom" />
+        <ParameterReference Name="Duration" />
+        <ParameterReference Name="Volume" />
+        <ParameterReference Name="Play Type" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="LED" BlockFamily="Action">
+      <Block>
+        <Mode>Off</Mode>
+        <Reference Type="VILib" Name="LedOff.vix" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>On</Mode>
+        <Reference Type="VILib" Name="LedOn.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParamInfo Name="Color" Identification="Identification_LEDColor.xml" Configuration="Identification_LEDColor.xml" Direction="Input" DataType="Int32" DefaultValue="1" />
+        <ParamInfo Name="Pulse" Identification="Identification_Pulse.png" Direction="Input" DataType="Boolean" DefaultValue="True" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>Reset</Mode>
+        <Reference Type="VILib" Name="LedReset.vix" />
+        <Flags>PBROnly</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Variable" BlockFamily="DataOperations">
+      <Parameter Name="name" Direction="Input" DataType="String" Visibility="Special" Configuration="NamedGlobalDataSelector.custom" DefaultValue="" />
+      <Parameter Name="valueOut" Direction="Output" Identification="Identification_Value.png" ModeCanSpecifyProperties="True" />
+      <Parameter Name="valueIn" Direction="Input" Identification="Identification_Value.png" ModeCanSpecifyProperties="True" />
+      <Category Name="Read">
+        <Block>
+          <Mode>ReadText</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalGetString" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueOut" DataType="String" />
+        </Block>
+        <Block>
+          <Mode>ReadNumeric</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalGetSingle" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueOut" DataType="Single" />
+        </Block>
+        <Block>
+          <Mode>ReadBoolean</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalGetBoolean" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueOut" DataType="Boolean" />
+        </Block>
+        <Block>
+          <Mode>ReadNumericArray</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalGetNumericArray" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueOut" DataType="Single[]" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>ReadBooleanArray</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalGetBooleanArray" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueOut" DataType="Boolean[]" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+      <Category Name="Write">
+        <Block>
+          <Mode>WriteText</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalSetString" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueIn" DataType="String" DefaultValue="" />
+        </Block>
+        <Block>
+          <Mode>WriteNumeric</Mode>
+          <PaletteInfo Weight="0.5" />
+          <Reference Type="VILib" Name="X3.Lib:GlobalSetSingle" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueIn" DataType="Single" DefaultValue="0" />
+        </Block>
+        <Block>
+          <Mode>WriteBoolean</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalSetBoolean" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueIn" DataType="Boolean" DefaultValue="False" />
+        </Block>
+        <Block>
+          <Mode>WriteNumericArray</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalSetNumericArray" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueIn" DataType="Single[]" DefaultValue="[]" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>WriteBooleanArray</Mode>
+          <Reference Type="VILib" Name="X3.Lib:GlobalSetBooleanArray" />
+          <ParameterReference Name="name" />
+          <ParameterReference Name="valueIn" DataType="Boolean[]" DefaultValue="[]" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+    </PolyGroup>
+    <PolyGroup Name="Constant" BlockFamily="DataOperations">
+      <Parameter Name="valueOut" Direction="Output" Identification="Identification_ConstantValue.png" ModeCanSpecifyProperties="True" />
+      <Parameter Name="valueIn" Direction="Input" Visibility="Special" ModeCanSpecifyProperties="True" />
+      <Block>
+        <Mode>Text</Mode>
+        <Reference Type="VILib" Name="X3.Lib:GlobalConstString" />
+        <ParameterReference Name="valueIn" DataType="String" DefaultValue="" Configuration="TextBox.custom"/>
+        <ParameterReference Name="valueOut" DataType="String" />
+      </Block>
+      <Block>
+        <Mode>Numeric</Mode>
+        <Reference Type="VILib" Name="X3.Lib:GlobalConstSingle" />
+        <ParameterReference Name="valueIn" DataType="Single" DefaultValue="0" Configuration="TextBox.custom"/>
+        <ParameterReference Name="valueOut" DataType="Single" />
+        <PaletteInfo Weight="0.5" />
+      </Block>
+      <Block>
+        <Mode>Boolean</Mode>
+        <Reference Type="VILib" Name="X3.Lib:GlobalConstBoolean" />
+        <ParameterReference Name="valueIn" DataType="Boolean" DefaultValue="False" />
+        <ParameterReference Name="valueOut" DataType="Boolean" />
+      </Block>
+      <Block>
+        <Mode>NumericArray</Mode>
+        <Reference Type="VILib" Name="X3.Lib:GlobalConstNumericArray" />
+        <ParameterReference Name="valueIn" DataType="Single[]" DefaultValue="[]" />
+        <ParameterReference Name="valueOut" DataType="Single[]" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>BooleanArray</Mode>
+        <Reference Type="VILib" Name="X3.Lib:GlobalConstBooleanArray" />
+        <ParameterReference Name="valueIn" DataType="Boolean[]" DefaultValue="[]" />
+        <ParameterReference Name="valueOut" DataType="Boolean[]" />
+        <Flags>PBROnly</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="ArrayOperations" BlockFamily="DataOperations">
+      <Parameter Name="Index" Direction="Input" DataType="Single" DefaultValue="0" Identification="Identification_Index.png" MinValue="0" />
+      <Parameter Name="Size" Direction="Output" DataType="Single" Identification="Identification_Length.png" />
+      <Parameter Name="valueIn" Direction="Input" Identification="Identification_Value.png" ModeCanSpecifyProperties="True" />
+      <Parameter Name="valueOut" Direction="Output" Identification="Identification_Value.png" ModeCanSpecifyProperties="True" />
+      <Parameter Name="arrayInNumeric" Direction="Input" DataType="Single[]" DefaultValue="[0]" Identification="Identification_ArrayInNumeric.png" />
+      <Parameter Name="arrayInBoolean" Direction="Input" DataType="Boolean[]" DefaultValue="[False]" Identification="Identification_ArrayInBoolean.png" />
+      <Parameter Name="arrayOutNumeric" Direction="Output" DataType="Single[]" Identification="Identification_ArrayOutNumeric.png" />
+      <Parameter Name="arrayOutBoolean" Direction="Output" DataType="Boolean[]" Identification="Identification_ArrayOutBoolean.png" />
+      <Category Name="Append">
+        <Block>
+          <Mode>Append_Numeric</Mode>
+          <Reference Type="VILib" Name="ArrayBuild.vix" />
+          <ParameterReference Name="arrayInNumeric" />
+          <ParameterReference Name="valueIn" DataType="Single" DefaultValue="0" />
+          <ParameterReference Name="arrayOutNumeric" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>Append_Boolean</Mode>
+          <Reference Type="VILib" Name="ArrayBuildBoolean.vix" />
+          <ParameterReference Name="arrayInBoolean" />
+          <ParameterReference Name="valueIn" DataType="Boolean" DefaultValue="False" />
+          <ParameterReference Name="arrayOutBoolean" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+      <Category Name="ReadAtIndex">
+        <Block>
+          <Mode>ReadAtIndex_Numeric</Mode>
+          <Reference Type="VILib" Name="ArrayReadAtIndex.vix" />
+          <PaletteInfo Weight="0.5" />
+          <ParameterReference Name="arrayInNumeric" />
+          <ParameterReference Name="Index" />
+          <ParameterReference Name="valueOut" DataType="Single" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>ReadAtIndex_Boolean</Mode>
+          <Reference Type="VILib" Name="ArrayReadAtIndexBoolean.vix" />
+          <ParameterReference Name="arrayInBoolean" />
+          <ParameterReference Name="Index" />
+          <ParameterReference Name="valueOut" DataType="Boolean" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+      <Category Name="WriteAtIndex">
+        <Block>
+          <Mode>WriteAtIndex_Numeric</Mode>
+          <Reference Type="VILib" Name="ArrayWriteAtIndex.vix" />
+          <ParameterReference Name="arrayInNumeric" />
+          <ParameterReference Name="Index" />
+          <ParameterReference Name="valueIn" DataType="Single" DefaultValue="0" />
+          <ParameterReference Name="arrayOutNumeric" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>WriteAtIndex_Boolean</Mode>
+          <Reference Type="VILib" Name="ArrayWriteAtIndexBoolean.vix" />
+          <ParameterReference Name="arrayInBoolean" />
+          <ParameterReference Name="Index" />
+          <ParameterReference Name="valueIn" DataType="Boolean" DefaultValue="False" />
+          <ParameterReference Name="arrayOutBoolean" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+      <Category Name="Length">
+        <Block>
+          <Mode>Length_Numeric</Mode>
+          <Reference Type="VILib" Name="ArrayGetSize.vix" />
+          <ParameterReference Name="arrayInNumeric" />
+          <ParameterReference Name="Size" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>Length_Boolean</Mode>
+          <Reference Type="VILib" Name="ArrayGetSizeBoolean.vix" />
+          <ParameterReference Name="arrayInBoolean" />
+          <ParameterReference Name="Size" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+    </PolyGroup>
+    <PolyGroup Name="BooleanOperations" BlockFamily="DataOperations">
+      <Parameter Name="A" Identification="Identification_A.png" Direction="Input" DataType="Boolean" DefaultValue="True" />
+      <Parameter Name="B" Identification="Identification_B.png" Direction="Input" DataType="Boolean" DefaultValue="True" />
+      <Parameter Name="Result" Identification="Identification_Result.png" Direction="Output" DataType="Boolean" />
+      <Block>
+        <Mode>And</Mode>
+        <Reference Type="VILib" Name="Boolean_And.vix" />
+        <ParameterReference Name="A" />
+        <ParameterReference Name="B" />
+        <ParameterReference Name="Result" />
+        <PaletteInfo Weight="0.5" />
+      </Block>
+      <Block>
+        <Mode>Or</Mode>
+        <Reference Type="VILib" Name="Boolean_Or.vix" />
+        <ParameterReference Name="A" />
+        <ParameterReference Name="B" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>XOR</Mode>
+        <Reference Type="VILib" Name="Boolean_XOr.vix" />
+        <ParameterReference Name="A" />
+        <ParameterReference Name="B" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Not</Mode>
+        <Reference Type="VILib" Name="Boolean_Not.vix" />
+        <ParameterReference Name="A" />
+        <ParameterReference Name="Result" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Math" BlockFamily="DataOperations">
+      <Parameter Name="X" Identification="Identification_A.png" Direction="Input" DataType="Single" DefaultValue="1" />
+      <Parameter Name="Y" Identification="Identification_B.png" Direction="Input" DataType="Single" DefaultValue="1" />
+      <Parameter Name="Result" Identification="Identification_Result.png" Direction="Output" DataType="Single" />
+      <Block>
+        <Mode>Add</Mode>
+        <Reference Type="VILib" Name="Arithmetic_Add.vix" />
+        <PaletteInfo Weight="0.5" PaletteName="Arithmetic" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Subtract</Mode>
+        <Reference Type="VILib" Name="Arithmetic_Subtract.vix" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Divide</Mode>
+        <Reference Type="VILib" Name="Arithmetic_Divide.vix" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Multiply</Mode>
+        <Reference Type="VILib" Name="Arithmetic_Multiply.vix" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>AbsoluteValue</Mode>
+        <Reference Type="VILib" Name="Arithmetic_AbsoluteValue.vix" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>SquareRoot</Mode>
+        <Reference Type="VILib" Name="Arithmetic_SquareRoot.vix" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Exponent</Mode>
+        <Reference Type="VILib" Name="Arithmetic_Power.vix" />
+        <ParamInfo Name="Base" Identification="Identification_A.png" DataType="Single" Direction="Input" DefaultValue="1" />
+        <ParamInfo Name="Exponent" DataType="Single" Direction="Input" DefaultValue="1" Identification="Identification_Exponent.png" />
+        <ParameterReference Name="Result" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>Advanced</Mode>
+        <Reference Type="VILib" Name="X3Placeholder_2A058539-ED76-4476-93FE-CCE8AA559C5A_MathEquation.vix" />
+        <ParameterReference Name="X" />
+        <ParameterReference Name="Y" />
+        <ParamInfo Name="C" Identification="Identification_C.png" Direction="Input" DataType="Single" DefaultValue="0" />
+        <ParamInfo Name="D" Identification="Identification_D.png" Direction="Input" DataType="Single" DefaultValue="0" />
+        <ParamInfo Name="Equation" CompilerDirectives="Equation" Visibility="Special" Configuration="TerminalMathFunction.custom" Direction="Input" DataType="String" DefaultValue="a+b-c*d" />
+        <ParameterReference Name="Result" />
+        <Flags>PBROnly</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Round" BlockFamily="DataOperations">
+      <Parameter Name="Input" Identification="Identification_Numeric.png" Direction="Input" DataType="Single" DefaultValue="4.75" />
+      <Parameter Name="Output Result" Identification="Identification_Result.png" Direction="Output" DataType="Single" />
+      <Block>
+        <Mode>Nearest</Mode>
+        <Reference Type="VILib" Name="Round_Nearest.vix" />
+        <ParameterReference Name="Input" />
+        <ParameterReference Name="Output Result" />
+        <PaletteInfo Weight="0.5" PaletteName="Comparison" />
+      </Block>
+      <Block>
+        <Mode>Up</Mode>
+        <Reference Type="VILib" Name="Round_Up.vix" />
+        <ParameterReference Name="Input" />
+        <ParameterReference Name="Output Result" />
+      </Block>
+      <Block>
+        <Mode>Down</Mode>
+        <Reference Type="VILib" Name="Round_Down.vix" />
+        <ParameterReference Name="Input" />
+        <ParameterReference Name="Output Result" />
+      </Block>
+      <Block>
+        <Mode>Truncate</Mode>
+        <Reference Type="VILib" Name="Round_Truncate.vix" />
+        <ParameterReference Name="Input" />
+        <ParamInfo Name="Number of Decimals" Identification="Identification_NumberOfDecimals.png" Direction="Input" DataType="Single" DefaultValue="1" MinValue="0" MaxValue="4" />
+        <ParameterReference Name="Output Result" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Compare" BlockFamily="DataOperations">
+      <Parameter Name="x" Identification="Identification_A.png" Direction="Input" DataType="Single" DefaultValue="1" />
+      <Parameter Name="y" Identification="Identification_B.png" Direction="Input" DataType="Single" DefaultValue="1" />
+      <Parameter Name="Result" Identification="Identification_Result.png" Direction="Output" DataType="Boolean" />
+      <Block>
+        <Mode>Equal</Mode>
+        <Reference Type="VILib" Name="Comparison_Equal.vix" />
+        <ParameterReference Name="x" />
+        <ParameterReference Name="y" />
+        <ParameterReference Name="Result" />
+        <PaletteInfo Weight="0.5" PaletteName="Comparison" />
+      </Block>
+      <Block>
+        <Mode>NotEqual</Mode>
+        <Reference Type="VILib" Name="Comparison_NotEqual.vix" />
+        <ParameterReference Name="x" />
+        <ParameterReference Name="y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>GreaterThan</Mode>
+        <Reference Type="VILib" Name="Comparison_Greater.vix" />
+        <ParameterReference Name="x" />
+        <ParameterReference Name="y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>GreaterOrEqual</Mode>
+        <Reference Type="VILib" Name="Comparison_GreaterEqual.vix" />
+        <ParameterReference Name="x" />
+        <ParameterReference Name="y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>LessThan</Mode>
+        <Reference Type="VILib" Name="Comparison_Less.vix" />
+        <ParameterReference Name="x" />
+        <ParameterReference Name="y" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>LessOrEqual</Mode>
+        <Reference Type="VILib" Name="Comparison_LessEqual.vix" />
+        <ParameterReference Name="x" />
+        <ParameterReference Name="y" />
+        <ParameterReference Name="Result" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Range" BlockFamily="DataOperations">
+      <Parameter Name="Test Value" Identification="Identification_Test.png" Direction="Input" DataType="Single" DefaultValue="50" />
+      <Parameter Name="Lower Bound" Identification="Identification_LowerBound.png" Direction="Input" DataType="Single" DefaultValue="25" />
+      <Parameter Name="Upper Bound" Identification="Identification_UpperBound.png" Direction="Input" DataType="Single" DefaultValue="75" />
+      <Parameter Name="Result" Identification="Identification_Result.png" Direction="Output" DataType="Boolean" />
+      <Block>
+        <Mode>Inside</Mode>
+        <Reference Type="VILib" Name="InsideRange.vix" />
+        <ParameterReference Name="Test Value" />
+        <ParameterReference Name="Lower Bound" />
+        <ParameterReference Name="Upper Bound" />
+        <ParameterReference Name="Result" />
+        <PaletteInfo Weight="0.5" />
+      </Block>
+      <Block>
+        <Mode>Outside</Mode>
+        <Reference Type="VILib" Name="OutsideRange.vix" />
+        <ParameterReference Name="Test Value" />
+        <ParameterReference Name="Lower Bound" />
+        <ParameterReference Name="Upper Bound" />
+        <ParameterReference Name="Result" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Text" BlockFamily="DataOperations">
+      <Block>
+        <Mode>Merge</Mode>
+        <Reference Type="VILib" Name="ConcatenateStrings.vix" />
+        <ParamInfo Name="A" Direction="Input" DataType="String" DefaultValue="" Identification="Identification_StringA.png" />
+        <ParamInfo Name="B" Direction="Input" DataType="String" DefaultValue="" Identification="Identification_StringB.png" />
+        <ParamInfo Name="C" Direction="Input" DataType="String" DefaultValue="" Identification="Identification_StringC.png" />
+        <ParamInfo Name="Result" Direction="Output" DataType="String" Identification="Identification_Result.png" />
+        <PaletteInfo PaletteName="DataOperations" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Random" BlockFamily="DataOperations">
+      <Block>
+        <Mode>Numeric</Mode>
+        <Reference Type="VILib" Name="RandomSingle.vix" />
+        <ParamInfo Name="Lower" Identification="Identification_LowerBound.png" Direction="Input" DataType="Single" DefaultValue="1" />
+        <ParamInfo Name="Upper" Identification="Identification_UpperBound.png" Direction="Input" DataType="Single" DefaultValue="10" />
+        <ParamInfo Name="Number" Identification="Identification_RandomValue.png" Direction="Output" DataType="Single" />
+        <PaletteInfo Weight="0.5" />
+        <Flags />
+      </Block>
+      <Block>
+        <Mode>Boolean</Mode>
+        <Reference Type="VILib" Name="RandomBoolean.vix" />
+        <ParamInfo Name="Percent True" Identification="Identification_ProbabilityOfTrue.png" Direction="Input" DataType="Single" DefaultValue="50" MinValue="0" MaxValue="100" />
+        <ParamInfo Name="Result" Identification="Identification_RandomValue.png" Direction="Output" DataType="Boolean" />
+        <Flags />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="StartBlock" BlockFamily="FlowControl">
+      <Block>
+        <Mode>Start</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" SubType="StartBlock" Name="X3.Lib:StartBlockTest" />
+        <ParamInfo Name="Result" CompilerDirectives="Result" Direction="Output" DataType="Boolean" />
+        <BlockIcon Path="Start.png" />
+        <PaletteInfo IconPath="Palette_Start.png" Weight="0.5" />
+        <Flags>NoSequenceIn</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Wait" BlockFamily="FlowControl">
+      <Parameter Name="How Long" Identification="Identification_Time.png" Direction="Input" DataType="Single" DefaultValue="1" MinValue="0" />
+      <Block>
+        <Mode>Timer</Mode>
+        <Reference Type="VILib" SubType="ConfigurableWaitFor" Name="TimeCompare.vix" />
+        <ParameterReference Name="How Long" />
+        <ParamInfo Name="Result" CompilerDirectives="Result" Direction="Output" DataType="Boolean" />
+        <PaletteInfo PaletteName="Wait For Block" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="LoopCondition" BlockFamily="FlowControl">
+      <Parameter Name="Result" CompilerDirectives="Result" DataType="Boolean" Direction="Output" />
+      <Block>
+        <Reference Type="ConfigurableWhileLoop" />
+        <PaletteInfo IconPath="Palette_Loop.png" Weight="0.2" />
+      </Block>
+      <Block>
+        <Mode>Unlimited</Mode>
+        <Reference Type="VILib" Name="StopNever.vix" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Count</Mode>
+        <Reference Type="VILib" Name="StopAfterNumberIterations.vix" />
+        <ParamInfo Name="Iterations To Run" DataType="Int32" Direction="Input" DefaultValue="1" Identification="Identification_Count.png" MinValue="0" />
+        <ParamInfo Name="LoopIterationCount" CompilerDirectives="LoopIterationCount" Direction="Input" DefaultValue="0" DataType="Int32" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Boolean</Mode>
+        <Reference Type="VILib" Name="StopIfTrue.vix" />
+        <ParamInfo Name="Do Stop" DataType="Boolean" DefaultValue="True" Direction="Input" Identification="Identification_Until.png" />
+        <ParameterReference Name="Result" />
+      </Block>
+      <Block>
+        <Mode>Time</Mode>
+        <Reference Type="VILib" Name="TimeCompareLoop.vix" />
+        <ParamInfo Name="How Long" Identification="Identification_Time.png" DataType="Single" Direction="Input" DefaultValue="5" MinValue="0" />
+        <ParameterReference Name="Result" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="CaseSelector" BlockFamily="FlowControl">
+      <Parameter Name="Result" CompilerDirectives="Result" Direction="Output" ModeCanSpecifyProperties="true" />
+      <Block>
+        <Mode>String</Mode>
+        <Reference Type="VILib" Name="CaseSelector_String.vix" />
+        <ParamInfo Name="String" Identification="Identification_Text.png" DataType="String" Direction="Input" DefaultValue="" />
+        <ParameterReference Name="Result" DataType="String" />
+      </Block>
+      <Block>
+        <Mode>Boolean</Mode>
+        <Reference Type="VILib" Name="CaseSelector_Boolean.vix" />
+        <ParamInfo Name="Boolean" DataType="Boolean" Direction="Input" DefaultValue="False" Identification="Identification_TrueFalse.png" />
+        <ParameterReference Name="Result" DataType="Boolean" />
+      </Block>
+      <Block>
+        <Mode>Numeric</Mode>
+        <Reference Type="VILib" Name="CaseSelector_Numeric.vix" />
+        <ParamInfo Name="Number" Identification="Identification_Count.png" DataType="Int32" Direction="Input" DefaultValue="0" />
+        <ParameterReference Name="Result" DataType="Int32" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="SwitchNonTabbed" BlockFamily="FlowControl">
+      <Block>
+        <Reference Type="ConfigurableFlatCaseStructure" />
+        <PaletteInfo IconPath="Palette_Switch.png" Weight="0.1" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Interrupt" BlockFamily="FlowControl">
+      <Block>
+        <Mode>Interrupt</Mode>
+        <RedundantDisplayName/>
+        <PaletteInfo Weight="0.5" />
+        <Reference Type="VILib" Name="ToggleInterrupt.vix" />
+        <ParamInfo Name="InterruptValue" CompilerDirectives="InterruptValue" Visibility="Hidden" Direction="Input" DataType="Int32" DefaultValue="0" />
+        <ParamInfo Name="InterruptName" CompilerDirectives="InterruptName" Direction="Input" DataType="String" DefaultValue="01" Visibility="Special" Configuration="InterruptSelector.custom" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="LoopIndex" BlockFamily="FlowControl">
+      <Block>
+        <Mode>LoopIndex</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="LoopIndex.vix" />
+        <ParamInfo Name="LoopIterationCount" CompilerDirectives="LoopIterationCount" Direction="Input" DataType="Int32" DefaultValue="0" />
+        <ParamInfo Name="Loop Index" Identification="Blank.png" Direction="Output" DataType="Single" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="BrickButton" BlockFamily="Sensor">
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Value" ValueDisplay="Identification_OutputBrickButtonID.xml" Configuration="Identification_OutputBrickButtonID.xml" Identification="Identification_OutputBrickButtonID_0.png" Direction="Output" DataType="Single" ModeCanSpecifyProperties="True" />
+      <Block>
+        <BlockInterface>Selector</BlockInterface>
+        <Mode>Measure</Mode>
+        <RedundantDisplayName/>
+        <PaletteInfo Weight="0.5" />
+        <Reference Type="VILib" Name="ButtonValue.vix" />
+        <ParameterReference Name="Value" CompilerDirectives="Result" />
+      </Block>
+      <Block>
+        <Mode>Compare</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="ButtonCompare.vix" />
+        <BlockInterface>Compare</BlockInterface>
+        <ParamInfo Name="Buttons" DataType="Single[]" Direction="Input" DefaultValue="[2]" Configuration="Identification_OutputBrickButtonID.xml" Identification="Identification_OutputBrickButtonID.xml" />
+        <ParamInfo Name="Action" Configuration="Identification_TouchState.xml" Identification="Identification_TouchState.xml" DataType="Single" Direction="Input" DefaultValue="1" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Value" />
+      </Block>
+      <Block>
+        <Mode>ChangeBrickButton</Mode>
+        <Reference Type="VILib" Name="ButtonChange.vix" />
+        <BlockInterface>Change</BlockInterface>
+        <ParameterReference Name="Value" />
+        <ParameterReference Name="Result" />
+        <ParamInfo Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="ColorSensor" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+      <Parameter Name="Threshold" Identification="Identification_Threshold_UltrasonicInches.xml" DataType="Single" Direction="Input" DefaultValue="50" MinValue="0" MaxValue="100" />
+      <Parameter Name="Amount" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Color" Identification="Identification_MeasuredColor.png" ValueDisplay="Identification_Color.xml" Configuration="Identification_Color.xml" Direction="Output" DataType="Single" ModeCanSpecifyProperties="True" />
+      <Parameter Name="Value" Identification="Identification_MeasuredLight.png" DataType="Single" Direction="Output" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="CalibrateValueMin" Direction="Input" DataType="Single" Identification="Identification_MeasuredLight.png" DefaultValue="0" MinValue="0" MaxValue="100" />
+      <Parameter Name="CalibrateValueMax" Direction="Input" DataType="Single" Identification="Identification_MeasuredLight.png" DefaultValue="100" MinValue="0" MaxValue="100" />
+      <Hardware>
+        <NXTPlotColor>#ffff3132</NXTPlotColor>
+        <EV3PlotColor>#ff785028</EV3PlotColor>
+        <EV3AutoID>29</EV3AutoID>
+        <OtherAutoID>4</OtherAutoID>
+        <OtherAutoID>2</OtherAutoID>
+        <Direction>Input</Direction>
+        <DefaultPort>1.3</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureColor</Mode>
+        <Reference Type="VILib" Name="ColorValue.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Color" CompilerDirectives="Result" />
+        <PaletteInfo Weight="0.5" />
+        <BlockInterface>Selector</BlockInterface>
+        <Flags></Flags>
+        <Hardware>NxtColor</Hardware>
+        <HardwareModeInfo Name="COL-COLOR" ID="2" Range="0,8" Unit="" />
+      </Block>
+      <Block>
+        <Mode>MeasureReflectedLight</Mode>
+        <Reference Type="VILib" Name="ColorReflectedIntensity.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Value" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags></Flags>
+        <Hardware>NxtLight</Hardware>
+        <HardwareModeInfo Name="COL-REFLECT" AlternativeName="NXT-REFLECT" ID="0" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>MeasureAmbientLight</Mode>
+        <Reference Type="VILib" Name="ColorAmbientIntensity.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Value" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags></Flags>
+        <Hardware>NxtLight</Hardware>
+        <HardwareModeInfo Name="COL-AMBIENT" AlternativeName="NXT-AMBIENT" ID="1" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>CompareColor</Mode>
+        <Reference Type="VILib" Name="ColorCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParamInfo Name="Set of colors" Direction="Input" Configuration="Identification_Color.xml" Identification="Identification_Color.xml" DataType="Single[]" DefaultValue="[5]" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Color" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>CompareReflectedLight</Mode>
+        <Reference Type="VILib" Name="ColorReflectedIntensityCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Value" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>CompareAmbientLight</Mode>
+        <Reference Type="VILib" Name="ColorAmbientIntensityCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Value" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeColor</Mode>
+        <Reference Type="VILib" Name="ColorChange.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Color" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeReflectedLight</Mode>
+        <Reference Type="VILib" Name="ColorReflectedIntensityChange.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Value" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeAmbientLight</Mode>
+        <Reference Type="VILib" Name="ColorAmbientIntensityChange.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Value" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Category Name="Calibrate">
+        <Category Name="ReflectedLight">
+          <Block>
+            <Mode>CalibrateMinColor</Mode>
+            <Reference Type="VILib" Name="ColorCalibrateMin.vix" />
+            <ParameterReference Name="CalibrateValueMin" />
+            <Hardware>NxtLight</Hardware>
+            <Flags>PBROnly</Flags>
+          </Block>
+          <Block>
+            <Mode>CalibrateMaxColor</Mode>
+            <Reference Type="VILib" Name="ColorCalibrateMax.vix" />
+            <ParameterReference Name="CalibrateValueMax" />
+            <Hardware>NxtLight</Hardware>
+            <Flags>PBROnly</Flags>
+          </Block>
+          <Block>
+            <Mode>CalibrateResetColor</Mode>
+            <Reference Type="VILib" Name="ColorCalibrateDefault.vix" />
+            <Hardware>NxtLight</Hardware>
+            <Flags>PBROnly</Flags>
+          </Block>
+        </Category>
+      </Category>
+    </PolyGroup>
+    <PolyGroup Name="Gyro" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="Int32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.2" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+      <Parameter Name="Threshold" Identification="Identification_Threshold_Gyro.xml" DataType="Single" Direction="Input" DefaultValue="90" />
+      <Parameter Name="Change" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Angle" Identification="Identification_angle.png" Direction="Output" DataType="Single" />
+      <Parameter Name="Rate" Identification="Identification_Rate.png" Direction="Output" DataType="Single" />
+      <Flags>EducationOnly</Flags>
+      <Hardware>
+        <EV3PlotColor>#ff5d5d5d</EV3PlotColor>
+        <EV3AutoID>32</EV3AutoID>
+        <Direction>Input</Direction>
+        <DefaultPort>1.2</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureAngle</Mode>
+        <Reference Type="VILib" Name="GyroDegrees.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Angle" />
+        <PaletteInfo Weight="0.5" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+        <HardwareModeInfo Name="GYRO-ANG" ID="0" DataloggingModeID="3" DataloggingDatasetIndex="0" Range="-180,180" Unit="deg" IsAccumulator="True"/>
+      </Block>
+      <Block>
+        <Mode>MeasureRate</Mode>
+        <Reference Type="VILib" Name="GyroRate.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Rate" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+        <HardwareModeInfo Name="GYRO-RATE" ID="1" DataloggingModeID="3" DataloggingDatasetIndex="1" Range="-440,440" Unit="d/s" />
+      </Block>
+      <Block>
+        <Mode>MeasureAngleAndRate</Mode>
+        <Reference Type="VILib" Name="GyroAngleAndRate.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Angle" />
+        <ParameterReference Name="Rate" />
+        <BlockInterface>MultiMeasure</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareAngle</Mode>
+        <Reference Type="VILib" Name="GyroAngleCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Angle" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareRate</Mode>
+        <Reference Type="VILib" Name="GyroRateCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Rate" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+      </Block>
+      <Block>
+        <Mode>Reset</Mode>
+        <Reference Type="VILib" Name="GyroReset.vix" />
+        <ParameterReference Name="Port" />
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeAngle</Mode>
+        <Reference Type="VILib" Name="DeltaWaitGyroAngle.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Change" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Angle" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeRate</Mode>
+        <Reference Type="VILib" Name="DeltaWaitGyroRate.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Change" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Rate" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphGyro</Hardware>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="InfraredSensor" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.4" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+      <Parameter Name="Threshold" DataType="Single" Direction="Input" DefaultValue="50" Identification="Identification_Threshold_UltrasonicInches.xml" MinValue="0" MaxValue="100" />
+      <Parameter Name="Amount" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="HeadingAmount" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="2" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Proximity" DataType="Single" Direction="Output" Identification="Identification_OutputDistance.png" />
+      <Parameter Name="Channel" DataType="Single" Direction="Input" DefaultValue="1" Identification="Identification_SetOfChannels.xml" Configuration="Identification_SetOfChannels.xml" />
+      <Parameter Name="Heading" DataType="Single" Direction="Output" Identification="Identification_OutputHeading.png" />
+      <Parameter Name="Valid" DataType="Boolean" Direction="Output" Identification="Identification_Valid.png" />
+      <Parameter Name="Button" DataType="Single" Direction="Output" Identification="Identification_OutputButtonID_0.png" Configuration="Identification_OutputButtonID.xml" ValueDisplay="Identification_OutputButtonID.xml" ModeCanSpecifyProperties="True" />
+      <Hardware>
+        <EV3PlotColor>#ff5d5d5d</EV3PlotColor>
+        <EV3AutoID>33</EV3AutoID>
+        <Direction>Input</Direction>
+        <DefaultPort>1.4</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureProximity</Mode>
+        <Reference Type="VILib" Name="IRProximity.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Proximity" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR-PROX" ID="0" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>MeasureBeaconSeeker</Mode>
+        <Reference Type="VILib" Name="IRSeeker.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParameterReference Name="Heading" />
+        <ParameterReference Name="Proximity" />
+        <ParameterReference Name="Valid" />
+        <BlockInterface>MultiMeasure</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR-SEEK" ID="1" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>MeasureBeaconSeekerDataloggingHeading</Mode>
+        <Reference Type="VILib" Name="IRSeekerDataloggingHeading.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Heading" />
+        <BlockInterface>MultiMeasureSlice</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR-SEEK" ID="1" DataloggingModeID="1" DataloggingDatasetIndex="0" Range="-25,25" Unit="deg" />
+      </Block>
+      <Block>
+        <Mode>MeasureBeaconSeekerDataloggingProximity</Mode>
+        <Reference Type="VILib" Name="IRSeekerDataloggingProximity.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Proximity" />
+        <BlockInterface>MultiMeasureSlice</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR-SEEK" ID="1" DataloggingModeID="1" DataloggingDatasetIndex="1" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>MeasureBeaconRemote</Mode>
+        <Reference Type="VILib" Name="IRRemote.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParameterReference Name="Button" CompilerDirectives="Result" />
+        <BlockInterface>Selector</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR-REMOTE" ID="2" Range="0,10" Unit="btn" />
+      </Block>
+      <Block>
+        <Mode>CompareProximity</Mode>
+        <Reference Type="VILib" Name="IRProximityCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Proximity" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR_PROX" ID="0" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>CompareBeaconSeekerHeading</Mode>
+        <Reference Type="VILib" Name="IRTrackerCompareHeading.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParameterReference Name="Comparison" />
+        <ParamInfo Name="HeadingThreshold" Identification="Identification_Threshold_IRBeaconHeading.xml" DataType="Single" Direction="Input" DefaultValue="0" MinValue="-25" MaxValue="25" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Heading" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareBeaconSeekerProximity</Mode>
+        <Reference Type="VILib" Name="IRTrackerCompareProximity.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Proximity" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR_REMOTE" ID="2" Range="0,10" Unit="btn" />
+      </Block>
+      <Block>
+        <Mode>CompareRemote</Mode>
+        <Reference Type="VILib" Name="IRRemoteCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParamInfo Name="Set of remote button IDs" DataType="Single[]" DefaultValue="[1]" Direction="Input" Identification="Identification_OutputButtonID_0.png" Configuration="Identification_OutputButtonID.xml" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Button" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeProximity</Mode>
+        <Reference Type="VILib" Name="IRProximityChange.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Proximity" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR_PROX" ID="0" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>ChangeHeading</Mode>
+        <Reference Type="VILib" Name="IRTrackerChangeHeading.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="HeadingAmount" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Heading" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeBeaconProximity</Mode>
+        <Reference Type="VILib" Name="IRTrackerChangeProximity.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Proximity" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+        <HardwareModeInfo Name="IR_REMOTE" ID="2" Range="0,10" Unit="btn" />
+      </Block>
+      <Block>
+        <Mode>ChangeRemote</Mode>
+        <Reference Type="VILib" Name="IRRemoteChange.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Channel" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Button" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphIR</Hardware>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="RotationSensor" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="Int32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="MotorPort" CompilerDirectives="OneOutputPort" Direction="Input" DefaultValue="A" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="2" />
+      <Parameter Name="ThresholdSpeed" DataType="Single" Direction="Input" DefaultValue="50" ModeCanSpecifyProperties="True" />
+      <Parameter Name="ThresholdRotations" DataType="Single" Direction="Input" DefaultValue="1" ModeCanSpecifyProperties="True" />
+      <Parameter Name="ThresholdDegrees" DataType="Single" Direction="Input" DefaultValue="90" ModeCanSpecifyProperties="True" />
+      <Parameter Name="Amount" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="AmountRotations" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="1" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Degrees" Direction="Output" DataType="Single" Identification="Identification_OutpuNumberDegrees.png" />
+      <Parameter Name="Rotations" Direction="Output" DataType="Single" Identification="Identification_MotorRotation.png" />
+      <Parameter Name="Speed" Direction="Output" DataType="Single" Identification="Identification_CurrentPower.png" />
+      <Hardware>
+        <AlternativePolyGroupName>Motor</AlternativePolyGroupName>
+        <AlternativePolyGroupName>MediumMotor</AlternativePolyGroupName>
+        <OtherAutoID>8</OtherAutoID>
+        <EV3AutoID>0</EV3AutoID>
+        <EV3PlotColor>#ff6b3099</EV3PlotColor>
+        <NXTPlotColor>#ff3f0199</NXTPlotColor>
+        <Direction>Output</Direction>
+        <Unit>rot</Unit>
+        <Unit>deg</Unit>
+        <DefaultPort>1.A</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureDegrees</Mode>
+        <Reference Type="VILib" Name="RotationValue.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Degrees" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Exclude</HardwarePageTreatment>
+        <Flags></Flags>
+        <HardwareModeInfo Name="L-MOTOR-DEG" AlternativeName="M-MOTOR-DEG" ID="0" Range="-180,180" Unit="deg" />
+      </Block>
+      <Block>
+        <Mode>MeasureRotation</Mode>
+        <Reference Type="VILib" Name="RotationValueRotations.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Rotations" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Exclude</HardwarePageTreatment>
+        <Flags></Flags>
+        <HardwareModeInfo Name="L-MOTOR-ROT" AlternativeName="M-MOTOR-ROT" ID="1" Range="-100,100" Unit="rot" />
+      </Block>
+      <Block>
+        <Mode>MeasureCurrentSpeed</Mode>
+        <Reference Type="VILib" Name="MotorSpeedSensor.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Speed" />
+        <BlockInterface>Measure</BlockInterface>
+        <HardwarePageTreatment>Exclude</HardwarePageTreatment>
+        <Flags></Flags>
+        <HardwareModeInfo Name="L-MOTOR-SPD" AlternativeName="M-MOTOR-SPD" ID="2" Range="0,100" Unit="%" />
+      </Block>
+      <Block>
+        <Mode>CompareDegrees</Mode>
+        <Reference Type="VILib" Name="RotationDegreesCompare.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdDegrees" Identification="Identification_Threshold_Degrees.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Degrees" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>CompareRotation</Mode>
+        <Reference Type="VILib" Name="RotationRotationsCompare.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdRotations" Identification="Identification_Threshold_Rotations.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Rotations" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>CompareCurrentSpeed</Mode>
+        <Reference Type="VILib" Name="MotorSpeedCompare.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdSpeed" Identification="Identification_Threshold_Speed.xml" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Speed" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeDegrees</Mode>
+        <Reference Type="VILib" Name="RotationDegreesChange.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Degrees" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeRotation</Mode>
+        <Reference Type="VILib" Name="RotationRotationsChange.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountRotations" />
+        <ParameterReference Name="Rotations" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeSpeed</Mode>
+        <Reference Type="VILib" Name="MotorSpeedChange.vix" />
+        <ParameterReference Name="MotorPort" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Speed" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>Reset</Mode>
+        <Reference Type="VILib" Name="RotationReset.vix" />
+        <ParameterReference Name="MotorPort" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="TemperatureSensor" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="Int32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.1" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+      <Parameter Name="ThresholdC" DataType="Single" Direction="Input" DefaultValue="25" ModeCanSpecifyProperties="True" />
+      <Parameter Name="ThresholdF" DataType="Single" Direction="Input" DefaultValue="77" ModeCanSpecifyProperties="True" />
+      <Parameter Name="Amount" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="AmountC" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="2" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Celsius" Identification="Identification_Celcius.png" Direction="Output" DataType="Single" />
+      <Parameter Name="Fahrenheit" Identification="Identification_Fahrenheit.png" Direction="Output" DataType="Single" />
+      <Flags>EducationOnly</Flags>
+      <Hardware>
+        <NXTPlotColor>#ff3441ff</NXTPlotColor>
+        <EV3PlotColor>#ff026eba</EV3PlotColor>
+        <OtherAutoID>6</OtherAutoID>
+        <EV3AutoID>6</EV3AutoID>
+        <Direction>Input</Direction>
+        <Unit>°F</Unit>
+        <Unit>°C</Unit>
+        <DefaultPort>1.1</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureCelsius</Mode>
+        <Reference Type="VILib" Name="TemperatureValueCelsius.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Celsius" />
+        <PaletteInfo Weight="0.5" />
+        <BlockInterface>Measure</BlockInterface>
+        <Hardware>Temperature</Hardware>
+        <HardwareModeInfo Name="NXT-TEMP-C" ID="0" Range="-20,120" Unit="°C" />
+      </Block>
+      <Block>
+        <Reference Type="VILib" Name="TemperatureValueFahrenheit.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Fahrenheit" />
+        <BlockInterface>Measure</BlockInterface>
+        <Mode>MeasureFahrenheit</Mode>
+        <Hardware>Temperature</Hardware>
+        <HardwareModeInfo Name="NXT-TEMP-F" ID="1" Range="-65, 260" Unit="°F" />
+      </Block>
+      <Block>
+        <Mode>CompareCelsius</Mode>
+        <Reference Type="VILib" Name="TemperatureCompareCelsius.vix" />
+        <ParameterReference Name="Port"/>
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdC" Identification="Identification_Threshold_TemperatureCelsius.xml" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Celsius" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>Temperature</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareFahrenheit</Mode>
+        <Reference Type="VILib" Name="TemperatureCompareFahrenheit.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdF" Identification="Identification_Threshold_TemperatureFahrenheit.xml" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Fahrenheit" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>Temperature</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeCelsius</Mode>
+        <Reference Type="VILib" Name="TemperatureChangeCelsius.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountC" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Celsius" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>Temperature</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeFahrenheit</Mode>
+        <Reference Type="VILib" Name="TemperatureChangeFahrenheit.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Fahrenheit" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>Temperature</Hardware>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Timer" BlockFamily="Sensor">
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Timer" Direction="Input" DataType="Single" DefaultValue="1" Configuration="Identification_Timer.xml" Identification="Identification_Timer.xml" />
+      <Parameter Name="Timer Value" Direction="Output" DataType="Single" Identification="Identification_Time.png" />
+      <Block>
+        <Reference Type="VILib" Name="TimerValue.vix" />
+        <BlockInterface>Measure</BlockInterface>
+        <Mode>MeasureTime</Mode>
+        <PaletteInfo Weight="0.5" />
+        <ParameterReference Name="Timer" />
+        <ParameterReference Name="Timer Value" />
+      </Block>
+      <Block>
+        <Mode>CompareTime</Mode>
+        <Reference Type="VILib" Name="TimerCompare.vix" />
+        <ParameterReference Name="Timer" />
+        <ParamInfo Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="2" />
+        <ParamInfo Name="Threshold" Identification="Identification_Threshold_Timer.xml" DataType="Single" Direction="Input" DefaultValue="5" MinValue="0" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Timer Value" />
+        <BlockInterface>Compare</BlockInterface>
+      </Block>
+      <Block>
+        <Mode>ChangeTime</Mode>
+        <Reference Type="VILib" Name="TimerChange.vix" />
+        <ParameterReference Name="Timer" />
+        <ParamInfo Name="Amount" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="5" />
+        <ParameterReference Name="Timer Value" />
+        <ParameterReference Name="Result" />
+        <ParamInfo Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+        <BlockInterface>Change</BlockInterface>
+      </Block>
+      <Block>
+        <Mode>Reset</Mode>
+        <Reference Type="VILib" Name="TimerReset.vix" />
+        <ParameterReference Name="Timer" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="TouchSensor" BlockFamily="Sensor">
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.1" />
+      <Parameter Name="State" Identification="Identification_Touch.png" Direction="Output" DataType="Boolean" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Hardware>
+        <NXTPlotColor>#ffff33fc</NXTPlotColor>
+        <EV3PlotColor>#ffab0043</EV3PlotColor>
+        <OtherAutoID>1</OtherAutoID>
+        <EV3AutoID>16</EV3AutoID>
+        <Direction>Input</Direction>
+        <DefaultPort>1.1</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>Measure</Mode>
+        <Reference Type="VILib" Name="TouchValue.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="State" />
+        <PaletteInfo Weight="0.5" />
+        <BlockInterface>Measure</BlockInterface>
+        <Hardware>RudolphTouch</Hardware>
+        <HardwareModeInfo Name="TOUCH" AlternativeName="NXT-TOUCH" ID="0" Range="0,1" Unit="" />
+      </Block>
+      <Block>
+        <Mode>Compare</Mode>
+        <Reference Type="VILib" Name="TouchCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParamInfo Name="Pressed, Released or Bumped" Direction="Input" Identification="Identification_TouchState.xml" Configuration="Identification_TouchState.xml" DataType="Single" DefaultValue="1" />
+        <ParameterReference Name="Result" />
+        <ParamInfo Name="Value" Identification="Identification_Touch.png" DataType="Single" Direction="Output" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>RudolphTouch</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeState</Mode>
+        <Reference Type="VILib" Name="TouchChange.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="State" />
+        <ParamInfo Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>RudolphTouch</Hardware>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="UltrasonicSensor" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="Int32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.4" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+      <Parameter Name="Threshold" DataType="Single" Direction="Input" DefaultValue="50" ModeCanSpecifyProperties="True" MinValue="0" />
+      <Parameter Name="Change" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Distance" Direction="Output" DataType="Single" Identification="Identification_DistanceCM.png" />
+      <Parameter Name="DistanceInches" Direction="Output" DataType="Single" Identification="Identification_DistanceInches.png" />
+      <Parameter Name="Heard" CompilerDirectives="Result" Direction="Output" DataType="Boolean" Identification="Identification_UltrasoundDetected.png" />
+      <Parameter Name="Measuring Mode" Configuration="Identification_MeasuringMode.xml" Identification="Identification_MeasuringMode.xml" Direction="Input" DataType="Int32" DefaultValue="0" />
+      <Flags>EducationOnly</Flags>
+      <Hardware>
+        <NXTPlotColor>#ffffff33</NXTPlotColor>
+        <EV3PlotColor>#ffffc800</EV3PlotColor>
+        <OtherAutoID>5</OtherAutoID>
+        <EV3AutoID>30</EV3AutoID>
+        <Direction>Input</Direction>
+        <Unit>cm</Unit>
+        <Unit>in</Unit>
+        <DefaultPort>1.4</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>MeasureCentimeters</Mode>
+        <Reference Type="VILib" Name="DistanceCM.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Distance" />
+        <PaletteInfo Weight="0.5" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags></Flags>
+        <Hardware>RudolphUltraSound</Hardware>
+        <HardwareModeInfo Name="US-DIST-CM" AlternativeName="NXT-US-CM" ID="0" Range="0,255" Unit="cm" />
+      </Block>
+      <Block>
+        <Mode>MeasureInches</Mode>
+        <Reference Type="VILib" Name="DistanceInches.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="DistanceInches" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags></Flags>
+        <Hardware>RudolphUltraSound</Hardware>
+        <HardwareModeInfo Name="US-DIST-IN" AlternativeName="NXT-US-IN" ID="1" Range="0,100" Unit="in" />
+      </Block>
+      <Block>
+        <Mode>MeasurePresence</Mode>
+        <Reference Type="VILib" Name="DistanceListen.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Heard" />
+        <BlockInterface>Measure</BlockInterface>
+        <Flags>PBROnly</Flags>
+        <Hardware>RudolphUltraSound</Hardware>
+        <HardwareModeInfo Name="US-LISTEN" ID="2" Range="0,1" Unit="" />
+      </Block>
+      <Block>
+        <Mode>CompareCentimeters</Mode>
+        <Reference Type="VILib" Name="DistanceCMCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" Identification="Identification_Threshold_UltrasonicCM.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Distance" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags />
+        <Hardware>NxtUltraSound</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareInches</Mode>
+        <Reference Type="VILib" Name="DistanceInchesCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" Identification="Identification_Threshold_UltrasonicInches.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="DistanceInches" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>NxtUltraSound</Hardware>
+      </Block>
+      <Block>
+        <Mode>ComparePresence</Mode>
+        <Reference Type="VILib" Name="DistanceListenCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Heard" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>NxtUltraSound</Hardware>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Category Name="Advanced">
+        <Block>
+          <Mode>Centimeters</Mode>
+          <Reference Type="VILib" Name="AdvDistanceCM.vix" />
+          <ParameterReference Name="Port" />
+          <ParameterReference Name="Measuring Mode" />
+          <ParameterReference Name="Distance" />
+          <Flags>PBROnly</Flags>
+          <BlockInterface>Measure</BlockInterface>
+          <Hardware>RudolphUltraSound</Hardware>
+          <HardwareModeInfo Name="US-DIST-IN" ID="3" Range="0,255" Unit="cm" />
+        </Block>
+        <Block>
+          <Mode>Inches</Mode>
+          <Reference Type="VILib" Name="AdvDistanceInches.vix" />
+          <ParameterReference Name="Port" />
+          <ParameterReference Name="Measuring Mode" />
+          <ParameterReference Name="DistanceInches" />
+          <Flags>PBROnly</Flags>
+          <BlockInterface>Measure</BlockInterface>
+          <Hardware>RudolphUltraSound</Hardware>
+          <HardwareModeInfo Name="US-DIST-IN" ID="4" Range="0,100" Unit="in" />
+        </Block>
+      </Category>
+      <Block>
+        <Mode>ChangeDistanceCm</Mode>
+        <Reference Type="VILib" Name="DeltaWaitDistanceCM.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Change" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Distance" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+        <Hardware>RudolphUltraSound</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeDistanceInch</Mode>
+        <Reference Type="VILib" Name="DeltaWaitDistanceInches.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Change" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="DistanceInches" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags></Flags>
+        <Hardware>RudolphUltraSound</Hardware>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="EnergyMeter" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="2" />
+      <Parameter Name="ComparisonOut" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+      <Parameter Name="ThresholdVolt" DataType="Single" Direction="Input" DefaultValue="5" ModeCanSpecifyProperties="True" MinValue="0" />
+      <Parameter Name="ThresholdCurr" DataType="Single" Direction="Input" DefaultValue="0.2" ModeCanSpecifyProperties="True" MinValue="0" />
+      <Parameter Name="ThresholdWatt" DataType="Single" Direction="Input" DefaultValue="2" ModeCanSpecifyProperties="True" MinValue="0" />
+      <Parameter Name="ThresholdJoule" DataType="Single" Direction="Input" DefaultValue="50" ModeCanSpecifyProperties="True" MinValue="0" />
+      <Parameter Name="Amount" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="AmountVolt" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="1" />
+      <Parameter Name="AmountCurr" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="0.1" />
+      <Parameter Name="AmountWatt" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="0.5" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Volts" Direction="Output" DataType="Single" Identification="Identification_OutVolts.png" />
+      <Parameter Name="Current" Direction="Output" DataType="Single" Identification="Identification_Current.png" />
+      <Parameter Name="Watts" Direction="Output" DataType="Single" Identification="Identification_OutWatts.png" />
+      <Parameter Name="Joule" Direction="Output" DataType="Single" Identification="Identification_Joule.png" />
+      <Flags>EducationOnly</Flags>
+      <Hardware>
+        <NXTPlotColor>#ff49BA00</NXTPlotColor>
+        <EV3PlotColor>#ff49BA00</EV3PlotColor>
+        <Direction>Input</Direction>
+        <DefaultPort>1.3</DefaultPort>
+        <EV3AutoID>99</EV3AutoID>
+      </Hardware>
+      <Block>
+        <Mode>MeasureInVoltage</Mode>
+        <BlockInterface>Measure</BlockInterface>
+        <Reference Type="VILib" Name="EnergyMeterInVoltage.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Volts" />
+        <Hardware>EnergyMeter</Hardware>
+        <HardwareModeInfo Name="ES-IN-VOLT" ID="0" DataloggingModeID="7" DataloggingDatasetIndex="0" Range="0,10" Unit="V" />
+      </Block>
+      <Block>
+        <Mode>MeasureInCurrent</Mode>
+        <BlockInterface>Measure</BlockInterface>
+        <Reference Type="VILib" Name="EnergyMeterInCurrent.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Current" />
+        <Hardware>EnergyMeter</Hardware>
+        <HardwareModeInfo Name="ES-IN-AMP" ID="1" DataloggingModeID="7" DataloggingDatasetIndex="1" Range="0,0.5" Unit="A" />
+      </Block>
+      <Block>
+        <Mode>MeasureInWatts</Mode>
+        <BlockInterface>Measure</BlockInterface>
+        <Reference Type="VILib" Name="EnergyMeterInWattage.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Watts" />
+        <Hardware>EnergyMeter</Hardware>
+        <HardwareModeInfo Name="ES-IN-WATT" ID="5" DataloggingModeID="7" DataloggingDatasetIndex="5" Range="0,4" Unit="W" />
+      </Block>
+      <Block>
+        <Mode>MeasureOutVoltage</Mode>
+        <BlockInterface>Measure</BlockInterface>
+        <Reference Type="VILib" Name="EnergyMeterOutVoltage.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Volts" />
+        <Hardware>EnergyMeter</Hardware>
+        <HardwareModeInfo Name="ES-OUT-VOLT" ID="2" DataloggingModeID="7" DataloggingDatasetIndex="2" Range="0,10" Unit="V" />
+      </Block>
+      <Block>
+        <Mode>MeasureOutCurrent</Mode>
+        <BlockInterface>Measure</BlockInterface>
+        <Reference Type="VILib" Name="EnergyMeterOutCurrent.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Current" />
+        <Hardware>EnergyMeter</Hardware>
+        <HardwareModeInfo Name="ES-OUT-AMP" ID="3" DataloggingModeID="7" DataloggingDatasetIndex="3" Range="0,0.5" Unit="A" />
+      </Block>
+      <Block>
+        <Mode>MeasureOutWatts</Mode>
+        <BlockInterface>Measure</BlockInterface>
+        <Reference Type="VILib" Name="EnergyMeterOutWattage.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Watts" />
+        <Hardware>EnergyMeter</Hardware>
+        <HardwareModeInfo Name="ES-OUT-WATT" ID="6" DataloggingModeID="7" DataloggingDatasetIndex="6" Range="0,4" Unit="W" />
+      </Block>
+      <Block>
+        <Mode>MeasureJoule</Mode>
+        <BlockInterface>Measure</BlockInterface>
+        <Reference Type="VILib" Name="EnergyMeterJoule.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Joule" />
+        <Hardware>EnergyMeter</Hardware>
+        <HardwareModeInfo Name="ES-JOULE" ID="4" DataloggingModeID="7" DataloggingDatasetIndex="4" Range="0,100" Unit="J" />
+      </Block>
+      <Block>
+        <Mode>CompareInVoltage</Mode>
+        <Reference Type="VILib" Name="EnergyMeterCompareInVoltage.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdVolt" Identification="Identification_Threshold_Timer.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Volts" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareInCurrent</Mode>
+        <Reference Type="VILib" Name="EnergyMeterCompareInCurrent.vix"  />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdCurr" Identification="Identification_Threshold_Current.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Current" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareInWatt</Mode>
+        <Reference Type="VILib" Name="EnergyMeterCompareInWatt.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdWatt" Identification="Identification_Threshold_Wattage.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Watts" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareOutVoltage</Mode>
+        <Reference Type="VILib" Name="EnergyMeterCompareOutVoltage.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="ComparisonOut" />
+        <ParameterReference Name="ThresholdVolt" Identification="Identification_Threshold_Voltage_Out.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Volts" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareOutCurrent</Mode>
+        <Reference Type="VILib" Name="EnergyMeterCompareOutCurrent.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="ComparisonOut" />
+        <ParameterReference Name="ThresholdCurr" Identification="Identification_Threshold_Current_Out.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Current" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareOutWatt</Mode>
+        <Reference Type="VILib" Name="EnergyMeterCompareOutWatt.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="ComparisonOut" />
+        <ParameterReference Name="ThresholdWatt" Identification="Identification_Threshold_Wattage_Out.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Watts" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>CompareOutJoule</Mode>
+        <Reference Type="VILib" Name="EnergyMeterCompareJoule.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="ThresholdJoule" Identification="Identification_Threshold_UltrasonicInches.xml"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Joule" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeInVoltage</Mode>
+        <Reference Type="VILib" Name="EnergyMeterChangeInVoltage.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountVolt" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Volts" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeInCurrent</Mode>
+        <Reference Type="VILib" Name="EnergyMeterChangeInCurrent.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountCurr" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Current" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeInWatt</Mode>
+        <Reference Type="VILib" Name="EnergyMeterChangeInWatt.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountWatt" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Watts" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeOutVoltage</Mode>
+        <Reference Type="VILib" Name="EnergyMeterChangeOutVoltage.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountVolt" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Volts" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeOutCurrent</Mode>
+        <Reference Type="VILib" Name="EnergyMeterChangeOutCurrent.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountCurr" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Current" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeOutWatt</Mode>
+        <Reference Type="VILib" Name="EnergyMeterChangeOutWatt.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="AmountWatt" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Watts" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangeJoule</Mode>
+        <Reference Type="VILib" Name="EnergyMeterChangeJoule.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Amount" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Joule" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>EnergyMeter</Hardware>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="SoundSensor" BlockFamily="Sensor">
+      <Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.2" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="2" />
+      <Parameter Name="Threshold Value" Identification="Identification_Threshold_UltrasonicInches.xml" DataType="Single" Direction="Input" DefaultValue="50" MinValue="0" MaxValue="100" />
+      <Parameter Name="Change" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="Value" Direction="Output" DataType="Single" Identification="Identification_Db.png" />
+      <Parameter Name="ValuedBa" Direction="Output" DataType="Single" Identification="Identification_Dba.png" />
+      <Parameter Name="CalibrateValueMin" Direction="Input" DataType="Single" Identification="Identification_Db.png" DefaultValue="0" MinValue="0" MaxValue="100" />
+      <Parameter Name="CalibrateValueMax" Direction="Input" DataType="Single" Identification="Identification_Db.png" DefaultValue="100" MinValue="0" MaxValue="100" />
+      <Flags>EducationOnly</Flags>
+      <Hardware>
+        <NXTPlotColor>#ffffab34</NXTPlotColor>
+        <EV3PlotColor>#ffd46800</EV3PlotColor>
+        <OtherAutoID>3</OtherAutoID>
+        <EV3AutoID>3</EV3AutoID>
+        <Direction>Input</Direction>
+        <DefaultPort>1.2</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>measuredB</Mode>
+        <Reference Type="VILib" Name="VolumeValue.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Value" />
+        <BlockInterface>Measure</BlockInterface>
+        <Hardware>NxtSound</Hardware>
+        <HardwareModeInfo Name="NXT-SND-DB" ID="0" Range="0,100" Unit="dB" />
+      </Block>
+      <Block>
+        <Mode>measuredBa</Mode>
+        <Reference Type="VILib" Name="VolumeValuedBa.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="ValuedBa" />
+        <BlockInterface>Measure</BlockInterface>
+        <Hardware>NxtSound</Hardware>
+        <HardwareModeInfo Name="NXT-SND-DBA" ID="1" Range="0,100" Unit="dBa" />
+      </Block>
+      <Block>
+        <Mode>comparedB</Mode>
+        <Reference Type="VILib" Name="VolumeCompare.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold Value" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Value" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>NxtSound</Hardware>
+      </Block>
+      <Block>
+        <Mode>comparedBa</Mode>
+        <Reference Type="VILib" Name="VolumeCompareDBA.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold Value" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ValuedBa" />
+        <BlockInterface>Compare</BlockInterface>
+        <Hardware>NxtSound</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangedB</Mode>
+        <Reference Type="VILib" Name="DeltaWaitVolume.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Change" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="Value" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>NxtSound</Hardware>
+      </Block>
+      <Block>
+        <Mode>ChangedBa</Mode>
+        <Reference Type="VILib" Name="DeltaWaitVolumedBa.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Direction" />
+        <ParameterReference Name="Change" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ValuedBa" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Hardware>NxtSound</Hardware>
+      </Block>
+      <Category Name="Calibrate">
+        <Category Name="dB">
+          <Block>
+            <Mode>CalibrateMinSound</Mode>
+            <Reference Type="VILib" Name="SoundCalibrateMin.vix" />
+            <ParameterReference Name="CalibrateValueMin" />
+            <Hardware>NxtSound</Hardware>
+            <Flags>PBROnly</Flags>
+          </Block>
+          <Block>
+            <Mode>CalibrateMaxSound</Mode>
+            <Reference Type="VILib" Name="SoundCalibrateMax.vix" />
+            <ParameterReference Name="CalibrateValueMax" />
+            <Hardware>NxtSound</Hardware>
+            <Flags>PBROnly</Flags>
+          </Block>
+          <Block>
+            <Mode>CalibrateResetSound</Mode>
+            <Reference Type="VILib" Name="SoundCalibrateDefault.vix" />
+            <Hardware>NxtSound</Hardware>
+            <Flags>PBROnly</Flags>
+          </Block>
+        </Category>
+      </Category>
+    </PolyGroup>
+    <!--<PolyGroup Name="IICSensor" BlockFamily="Sensor">
+      <Hardware>
+        <EV3AutoID>100</EV3AutoID>
+        <Direction>Input</Direction>
+      </Hardware>
+      <Block>
+        <Mode>IICByte</Mode>
+        <Reference Type="VILib"/>
+        <BlockInterface>Measure</BlockInterface>
+        <HardwareModeInfo Name="IIC BYTE" ID="0" Range="0,255"/>
+      </Block>
+      <Block>
+        <Mode>IICWord</Mode>
+        <Reference Type="VILib"/>
+        <BlockInterface>Measure</BlockInterface>
+        <HardwareModeInfo Name="IIC WORD" ID="1" Range="0,65255"/>
+      </Block>
+    </PolyGroup>-->
+    <PolyGroup Name="FileAccess" BlockFamily="Advanced">
+      <Parameter Name="FileName" Visibility="Special" Direction="Input" DataType="String" Identification="Identification_FileName.png" DefaultValue="abc" SpecialTerminalIsBrickFileName="true"/>
+      <Category Name="Read">
+        <Block>
+          <Mode>Text</Mode>
+          <Reference Type="VILib" Name="FileReadText.vix" />
+          <ParameterReference Name="FileName" />
+          <ParamInfo Name="Text" Direction="Output" DataType="String" Identification="Identification_Text.png" />
+          <PaletteInfo Weight="0.5" />
+          <Flags></Flags>
+        </Block>
+        <Block>
+          <Mode>Numeric</Mode>
+          <Reference Type="VILib" Name="FileReadNumeric.vix" />
+          <ParameterReference Name="FileName" />
+          <ParamInfo Name="Numeric" Direction="Output" DataType="Single" Identification="Identification_Numeric.png" />
+          <Flags></Flags>
+        </Block>
+      </Category>
+      <Block>
+        <Mode>Write</Mode>
+        <ParameterReference Name="FileName" />
+        <ParamInfo Name="TextIn" Direction="Input" DataType="String" Identification="Identification_Text.png" DefaultValue="" />
+        <Reference Type="VILib" Name="FileWriteText.vix" />
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>Delete</Mode>
+        <Reference Type="VILib" Name="FileDelete.vix" />
+        <ParameterReference Name="FileName" />
+        <Flags></Flags>
+      </Block>
+      <Block>
+        <Mode>Close</Mode>
+        <Reference Type="VILib" Name="FileClose.vix" />
+        <ParameterReference Name="FileName" />
+        <Flags></Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Datalogging" BlockFamily="Advanced">
+      <Parameter Name="Name" Identification="A.png" Direction="Input" DataType="String" DefaultValue="MyData" Visibility="Special" Configuration="TextBox.custom" MaxInputLength="26" SpecialTerminalIsBrickFileName="true"/>
+      <Parameter Name="Duration" Identification="Identification_Time.png" Direction="Input" DataType="Single" DefaultValue="10" MinValue="0" />
+      <Parameter Name="Rate" Identification="Identification_DatalogRate.png" Direction="Input" DataType="Single" DefaultValue="10" MinValue="1" MaxValue="1000"/>
+      <Parameter Name="Rate Mode" Identification="Identification_RateUnit.xml" Configuration="Identification_RateUnit.xml" Direction="Input" DataType="Single" DefaultValue="0" />
+      <Flags>EducationOnly</Flags>
+      <Block>
+        <Mode>On</Mode>
+        <Reference Type="VILib" Name="X3Placeholder_2A058539-ED76-4476-93FE-CCE8AA559C5A_DataLogMasterOn.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParameterReference Name="Name" />
+        <ParameterReference Name="Rate" />
+        <ParameterReference Name="Rate Mode" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Category Name="OnForTime">
+        <Block>
+          <Mode>OnForTimeSeconds</Mode>
+          <Reference Type="VILib" Name="X3Placeholder_2A058539-ED76-4476-93FE-CCE8AA559C5A_DataLogMaster.vix" />
+          <ParameterReference Name="Name" />
+          <ParameterReference Name="Duration" />
+          <ParameterReference Name="Rate" />
+          <ParameterReference Name="Rate Mode" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>OnForTimeMinute</Mode>
+          <Reference Type="VILib" Name="X3Placeholder_2A058539-ED76-4476-93FE-CCE8AA559C5A_DataLogMasterMinutes.vix" />
+          <ParameterReference Name="Name" />
+          <ParameterReference Name="Duration" />
+          <ParameterReference Name="Rate" />
+          <ParameterReference Name="Rate Mode" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+      <Block>
+        <Mode>SingleMeasurement</Mode>
+        <Reference Type="VILib" Name="X3Placeholder_2A058539-ED76-4476-93FE-CCE8AA559C5A_DataLogMasterSingle.vix" />
+        <ParameterReference Name="Name" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>Stop</Mode>
+        <Reference Type="VILib" Name="X3Placeholder_2A058539-ED76-4476-93FE-CCE8AA559C5A_DataLogStop.vix" />
+        <ParameterReference Name="Name" />
+        <Flags>PBROnly</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Messaging" BlockFamily="Advanced">
+      <Parameter Name="Threshold" Identification="Identification_Threshold_UltrasonicInches.xml" DataType="Single" Direction="Input" DefaultValue="50" />
+      <Parameter Name="Comparison" Direction="Input" Configuration="Identification_ComparisonType.xml" Identification="Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+      <Parameter Name="Message Title" CompilerDirectives="MessageTitle" Identification="Identification_MessageTitle.png" Direction="Input" DataType="String" DefaultValue="abc" Visibility="Special" Configuration="TextBox.custom" />
+      <Parameter Name="SentMessage" Identification="Identification_Message.png" Direction="Input" ModeCanSpecifyProperties="True" />
+      <Parameter Name="Receiving Brick Name" Identification="Identification_ReceivingBrickName.png" Direction="Input" DataType="String" DefaultValue="" Configuration="PairedDeviceSelector.custom" />
+      <Parameter Name="MailboxId" CompilerDirectives="MailboxId" Visibility="Hidden" Direction="Input" DataType="SByte" DefaultValue="0" />
+      <Parameter Name="ReceivedMessage" CompilerDirectives="ReceivedMessage" Identification="Identification_Message.png" Direction="Output" ModeCanSpecifyProperties="True" />
+      <Parameter Name="Result" CompilerDirectives="Result" Identification="Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+      <Category Name="Send">
+        <Block>
+          <Mode>SendText</Mode>
+          <Reference Type="VILib" Name="SendMessage.vix" />
+          <ParameterReference Name="Message Title" />
+          <ParameterReference Name="Receiving Brick Name" />
+          <ParameterReference Name="SentMessage" DataType="String" DefaultValue="" />
+          <PaletteInfo Weight="0.5" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>SendNumeric</Mode>
+          <Reference Type="VILib" Name="SendMessageNumeric.vix" />
+          <ParameterReference Name="Message Title" />
+          <ParameterReference Name="Receiving Brick Name" />
+          <ParameterReference Name="SentMessage" DataType="Single" DefaultValue="0" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>SendBoolean</Mode>
+          <Reference Type="VILib" Name="SendMessageBoolean.vix" />
+          <ParameterReference Name="Message Title" />
+          <ParameterReference Name="Receiving Brick Name" />
+          <ParameterReference Name="SentMessage" DataType="Boolean" DefaultValue="True" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+      <Category Name="Receive">
+        <Block>
+          <Mode>ReceiveText</Mode>
+          <Reference Type="VILib" Name="ReceiveMessage.vix" />
+          <ParameterReference Name="MailboxId" />
+          <ParameterReference Name="Message Title" />
+          <ParameterReference Name="ReceivedMessage" DataType="String" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>ReceiveNumeric</Mode>
+          <Reference Type="VILib" Name="ReceiveMessageNumeric.vix" />
+          <ParameterReference Name="MailboxId" />
+          <ParameterReference Name="Message Title" />
+          <ParameterReference Name="ReceivedMessage" DataType="Single" />
+          <Flags>PBROnly</Flags>
+        </Block>
+        <Block>
+          <Mode>ReceiveBoolean</Mode>
+          <Reference Type="VILib" Name="ReceiveMessageBoolean.vix" />
+          <ParameterReference Name="MailboxId" />
+          <ParameterReference Name="Message Title" />
+          <ParameterReference Name="ReceivedMessage" DataType="Boolean" />
+          <Flags>PBROnly</Flags>
+        </Block>
+      </Category>
+      <Block>
+        <Mode>CompareText</Mode>
+        <Reference Type="VILib" Name="MessageCompareText.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParamInfo Name="Comparison2" Direction="Input" Configuration="Identification_ComparisonType2.xml" Identification="Identification_ComparisonType2.xml" DataType="Int32" DefaultValue="0" />
+        <ParamInfo Name="ComparisonText" DataType="String" Direction="Input" DefaultValue="" Identification="Identification_Text.png"/>
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="String" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>CompareNumeric</Mode>
+        <Reference Type="VILib" Name="MessageCompareNumeric.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParameterReference Name="Comparison" />
+        <ParameterReference Name="Threshold" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="Single" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>CompareBoolean</Mode>
+        <Reference Type="VILib" Name="MessageCompareBoolean.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="Boolean" />
+        <BlockInterface>Compare</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeTextUpdate</Mode>
+        <Reference Type="VILib" Name="MessageUpdateText.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="String" />
+        <BlockInterface>Update</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeNumericUpdate</Mode>
+        <Reference Type="VILib" Name="MessageUpdateNumeric.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="Single" />
+        <BlockInterface>Update</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeBooleanUpdate</Mode>
+        <Reference Type="VILib" Name="MessageUpdateBoolean.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="Boolean" />
+        <BlockInterface>Update</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeTextValue</Mode>
+        <Reference Type="VILib" Name="MessageChangeValueText.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="String" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeNumericValue</Mode>
+        <Reference Type="VILib" Name="MessageChangeValueNumeric.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParamInfo Name="Direction" Direction="Input" DataType="Int32" DefaultValue="2" Configuration="Identification_WaitForChange.xml" Identification="Identification_WaitForChange.xml" />
+        <ParamInfo Name="Change" Identification="Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="Single" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>ChangeBooleanValue</Mode>
+        <Reference Type="VILib" Name="MessageChangeValueBoolean.vix" />
+        <ParameterReference Name="Message Title" />
+        <ParameterReference Name="MailboxId" />
+        <ParameterReference Name="Result" />
+        <ParameterReference Name="ReceivedMessage" DataType="Boolean" />
+        <ParameterReference Name="i" />
+        <BlockInterface>Change</BlockInterface>
+        <Flags>PBROnly</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Bluetooth" BlockFamily="Advanced">
+      <Parameter Name="Connect To" Identification="Identification_ConnectToText.png" Direction="Input" DataType="String" DefaultValue="" Configuration="PairedDeviceSelector.custom" />
+      <Block>
+        <Mode>On</Mode>
+        <Reference Type="VILib" Name="BluetoothMessagingOn.vix" />
+        <PaletteInfo Weight="0.5" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>Off</Mode>
+        <Reference Type="VILib" Name="BluetoothMessagingOff.vix" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>Initiate</Mode>
+        <Reference Type="VILib" Name="BluetoothMessagingInitiate.vix" />
+        <ParameterReference Name="Connect To" />
+        <Flags>PBROnly</Flags>
+      </Block>
+      <Block>
+        <Mode>Clear</Mode>
+        <Reference Type="VILib" Name="BluetoothMessagingClose.vix" />
+        <ParameterReference Name="Connect To" />
+        <Flags>PBROnly</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="KeepAlive" BlockFamily="Advanced">
+      <Block>
+        <Mode>KeepAlive</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="KeepAlive.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParamInfo Name="Time until sleep (ms)" Direction="Output" DataType="Single" Identification="Identification_Time.png" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="RawSensorValue" BlockFamily="Advanced">
+      <Block>
+        <Mode>Raw</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="RawSensorValue.vix" />
+        <PaletteInfo Weight="0.5" />
+        <ParamInfo Name="Port Number" Direction="Input" DataType="Single" Identification="Identification_SensorPort.xml" Configuration="Identification_SensorPort.xml" DefaultValue="1" />
+        <ParamInfo Name="Raw Value" Direction="Output" DataType="Single" Identification="Identification_OutputNumeric.png" />
+        <Flags></Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="UnregulatedMotor" BlockFamily="Advanced">
+      <Hardware>
+        <AlternativePolyGroupName>Motor</AlternativePolyGroupName>
+        <AlternativePolyGroupName>MediumMotor</AlternativePolyGroupName>
+        <OtherAutoID>0</OtherAutoID>
+        <EV3AutoID>0</EV3AutoID>
+        <Direction>Output</Direction>
+        <DefaultPort>1.A</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>UnregulatedMotor</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="RawMotorOn.vix"/>
+        <PaletteInfo Weight="0.5"/>
+        <ParamInfo Name="MotorPort" CompilerDirectives="OneOutputPort" Direction="Input" DefaultValue="1.A" />
+        <ParamInfo Name="Power" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml" DataType="Single" Direction="Input" EducationDefaultValue="50" RetailDefaultValue="75" />
+      </Block>
+  </PolyGroup>
+    <!--<PolyGroup Name="Comment" DisplayName="Comment" BlockFamily="Advanced">
+      <Block>
+        <DisplayName>Comment</DisplayName>
+        <Reference Type="Comment" Name="Comment"/>
+        <PaletteInfo Weight="0.5"/>
+      </Block>
+    </PolyGroup>-->
+    <PolyGroup Name="InvertMotor" BlockFamily="Advanced">
+      <Hardware>
+        <AlternativePolyGroupName>Motor</AlternativePolyGroupName>
+        <AlternativePolyGroupName>MediumMotor</AlternativePolyGroupName>
+        <OtherAutoID>0</OtherAutoID>
+        <EV3AutoID>0</EV3AutoID>
+        <Direction>Output</Direction>
+        <DefaultPort>1.A</DefaultPort>
+      </Hardware>
+      <Block>
+        <Mode>Invert</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="InvertMotor.vix" />
+        <ParamInfo Name="MotorPort" CompilerDirectives="OneOutputPort" Direction="Input" DefaultValue="1.A" />
+        <ParamInfo Name="Invert" Direction="Input" DataType="Boolean" Identification="Identification_Invert.xml" Configuration="Identification_Invert.xml" DefaultValue="True" />
+        <PaletteInfo Weight="0.5" />
+        <Flags>PBROnly</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="StopBlock" BlockFamily="Advanced">
+      <Block>
+        <Mode>Stop</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="StopBlock.vix" />
+        <PaletteInfo IconPath="Palette_Stop.png" Weight="0.5" />
+        <Flags>NoSequenceOut</Flags>
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="CommentBlock" BlockFamily="Advanced">
+      <Block>
+        <Mode>Comment</Mode>
+        <RedundantDisplayName/>
+        <Reference Type="VILib" Name="CommentBlock.vix" />
+        <PaletteInfo Weight="0.5" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="HWPageManualInput" BlockFamily="Sensor">
+      <Hardware>
+        <Direction>Input</Direction>
+      </Hardware>
+      <Block>
+        <Mode>NoSensor</Mode>
+        <Reference Type="VILib" Name="neverUsed_D04426AB-522F-477F-86FA-4A1EEEC45449" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="HWPageManualOutput" BlockFamily="Sensor">
+      <Hardware>
+        <Direction>Output</Direction>
+      </Hardware>
+      <Block>
+        <Mode>NoSensor</Mode>
+        <Reference Type="VILib" Name="neverUsed_24800E4C-0E91-4B6C-A3B7-2C75465F04B8" />
+      </Block>
+    </PolyGroup>
+    <PolyGroup Name="Datalogger" BlockFamily="Sensor">
+      <Hardware />
+    </PolyGroup>
+  </PolyGroups>
+  <Hardwares>
+    <!-- NXT -->
+    <Hardware>
+      <Name>NxtSound</Name>
+      <Label>Sound</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Sound.png" />
+      <AutoID>3</AutoID>
+      <!-- Orange -->
+      <ColorHEX>#ffab34</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="SoundDB" ID="0" Unit="dB" />
+      <Mode Name="SoundDBA" ID="1" Unit="dBA" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtLight</Name>
+      <Label>Light</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Light.png" />
+      <AutoID>2</AutoID>
+      <!-- Red -->
+      <ColorHEX>#ff3334</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="LightAmb" ID="0" Unit="%" />
+      <Mode Name="LightRef" ID="2" Unit="%" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtTouch</Name>
+      <Label>Touch</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Touch.png" />
+      <AutoID>1</AutoID>
+      <!-- MAGENTA -->
+      <ColorHEX>#ff33fc</ColorHEX>
+      <RangeScale>0,1</RangeScale>
+      <Mode Name="Touch" ID="0" Unit="" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtUltraSound</Name>
+      <Label>Distance</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_US.png" />
+      <AutoID>5</AutoID>
+      <!-- Yellow -->
+      <ColorHEX>#ffff33</ColorHEX>
+      <RangeScale>0,255</RangeScale>
+      <Mode Name="UltraCon" ID="0" Unit="" />
+      <Mode Name="UltraSng" ID="1" Unit="" />
+      <Mode Name="UltraMul" ID="2" Unit="" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtColor</Name>
+      <Label>Color</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Color.png" />
+      <AutoID>4</AutoID>
+      <!-- Green -->
+      <ColorHEX>#008000</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="Color" ID="0" Unit="Col" />
+      <Mode Name="ColorRef" ID="1" Unit="%" />
+      <Mode Name="ColorAmb" ID="2" Unit="%" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtTemperature</Name>
+      <Label>Temperature</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Temperature.png" />
+      <AutoID>6</AutoID>
+      <!-- Blue -->
+      <ColorHEX>#3441ff</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="Temp-C" ID="0" Unit="C" />
+      <Mode Name="Temp-F" ID="1" Unit="F" />
+    </Hardware>
+    <Hardware>
+      <Name>EnergyMeter</Name>
+      <Label>EMeter</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_EnergyMeter.png" />
+      <!-- Green -->
+      <ColorHEX>#008000</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="Normal" ID="0" Unit="" />
+    </Hardware>
+    <!-- PBR -->
+    <Hardware>
+      <Name>RudolphTouch</Name>
+      <Label>Touch</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_PBR_Touch.png" />
+      <AutoID>16</AutoID>
+      <!-- Magenta -->
+      <ColorHEX>#ff33fc</ColorHEX>
+      <RangeScale>0,1</RangeScale>
+      <Mode Name="Touch" ID="0" Unit="" />
+    </Hardware>
+    <Hardware>
+      <Name>RudolphUltraSound</Name>
+      <Label>Distance</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_PBR_US.png" />
+      <AutoID>30</AutoID>
+      <!-- Yellow -->
+      <ColorHEX>#ffff33</ColorHEX>
+      <RangeScale>0,255</RangeScale>
+      <Mode Name="US-Dist-Cm" ID="0" Unit="cm" />
+      <Mode Name="US-Dist-In" ID="1" Unit="in" />
+      <Mode Name="US-Listen" ID="2" Unit="" />
+      <Mode Name="US-SI-Cm" ID="3" Unit="cm" />
+      <Mode Name="US-SI-In" ID="4" Unit="in" />
+      <Mode Name="US-DC-Cm" ID="5" Unit="cm" />
+      <Mode Name="US-DC-In" ID="6" Unit="in" />
+    </Hardware>
+    <Hardware>
+      <Name>RudolphIR</Name>
+      <Label>IR</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <AutoID>33</AutoID>
+      <HardwareIcon Path="Hardware_PBR_IR.png" />
+      <!-- Green -->
+      <ColorHEX>#008000</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="IR-Prox" ID="0" Unit="%" />
+      <Mode Name="IR-Seek" ID="1" Unit="%" />
+      <Mode Name="IR-Remote" ID="2" Unit="Btn" />
+      <Mode Name="IR-Rem-A" ID="3" Unit="" />
+      <Mode Name="IR-S-Alt" ID="4" Unit="" />
+    </Hardware>
+    <Hardware>
+      <Name>RudolphGyro</Name>
+      <Label>Gyro</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <AutoID>32</AutoID>
+      <HardwareIcon Path="Hardware_PBR_Gyro.png" />
+      <!-- Blue -->
+      <ColorHEX>#0000FF</ColorHEX>
+      <RangeScale>-180,180</RangeScale>
+      <Mode Name="Gyro-Ang" ID="0" Unit="Deg" />
+      <Mode Name="Gyro-Rate" ID="1" Unit="d/s" />
+      <Mode Name="Gyro-Fas" ID="2" Unit="" />
+      <Mode Name="Gyro-GandA" ID="3" Unit="" />
+      <Mode Name="Gyro-Cal" ID="4" Unit="" />
+    </Hardware>
+    <Hardware>
+      <Name>RudolphColor</Name>
+      <Label>Color</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <AutoID>29</AutoID>
+      <HardwareIcon Path="Hardware_PBR_Color.png" />
+      <!-- Green -->
+      <ColorHEX>#008000</ColorHEX>
+      <RangeScale>0,100</RangeScale>
+      <Mode Name="Col-Reflect" ID="0" Unit="%" />
+      <Mode Name="Col-Ambient" ID="1" Unit="%" />
+      <Mode Name="Col-Color" ID="2" Unit="Col" />
+      <Mode Name="Ref-Raw" ID="3" Unit="" />
+      <Mode Name="RGB-Raw" ID="4" Unit="" />
+      <Mode Name="Col-Cal" ID="5" Unit="" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtSound</Name>
+      <Label>NXT Sound</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Sound.png" />
+      <AutoID>3</AutoID>
+      <!-- Orange -->
+      <ColorHEX>#ffab34</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="SoundDB" ID="0" Unit="dB" />
+      <Mode Name="SoundDBA" ID="1" Unit="dBA" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtLight</Name>
+      <Label>NXT Light</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Light.png" />
+      <AutoID>2</AutoID>
+      <!-- Red -->
+      <ColorHEX>#ff3334</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="LightAmb" ID="0" Unit="%" />
+      <Mode Name="LightRef" ID="2" Unit="%" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtTouch</Name>
+      <Label>NXT Touch</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_NXT_Touch.png" />
+      <AutoID>1</AutoID>
+      <!-- Magenta -->
+      <ColorHEX>#ff33fc</ColorHEX>
+      <RangeScale>0,1</RangeScale>
+      <Mode Name="Touch" ID="0" Unit="" />
+    </Hardware>
+    <Hardware>
+      <Name>EnergyMeter</Name>
+      <Label>EMeter</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Hardware_EnergyMeter.png" />
+      <!-- Green -->
+      <ColorHEX>#008000</ColorHEX>
+      <RangeScale>0,1000</RangeScale>
+      <Mode Name="Normal" ID="0" Unit="" />
+    </Hardware>
+    <!--<Hardware>      <Name>Light</Name>      <Target>PBR</Target>      <Direction>Input</Direction>      <AutoID>22</AutoID>      <HardwareIcon Path="Unknown.png"/>    </Hardware>-->
+    <!-- Motors -->
+    <Hardware>
+      <Name>NxtMotor</Name>
+      <Label>Motor</Label>
+      <Target>NXT</Target>
+      <Direction>Output</Direction>
+      <AutoID>7</AutoID>
+      <HardwareIcon Path="Hardware_NXT_Motor.png" />
+      <Mode Name="L-Motor-Deg" ID="0" Unit="Deg" />
+      <Mode Name="L-Motor-Rot" ID="1" Unit="Rot" />
+    </Hardware>
+    <Hardware>
+      <Name>MotorLarge</Name>
+      <Label>Large Motor</Label>
+      <Target>PBR</Target>
+      <Direction>Output</Direction>
+      <AutoID>7</AutoID>
+      <HardwareIcon Path="Hardware_PBR_MotorLarge.png" />
+      <Mode Name="L-Motor-Deg" ID="0" Unit="Deg" />
+      <Mode Name="L-Motor-Rot" ID="1" Unit="Rot" />
+    </Hardware>
+    <Hardware>
+      <Name>MotorMedium</Name>
+      <Label>Medium Motor</Label>
+      <Target>PBR</Target>
+      <Direction>Output</Direction>
+      <AutoID>8</AutoID>
+      <HardwareIcon Path="Hardware_PBR_MotorMedium.png" />
+      <Mode Name="L-Motor-Deg" ID="0" Unit="Deg" />
+      <Mode Name="L-Motor-Rot" ID="1" Unit="Rot" />
+    </Hardware>
+    <Hardware>
+      <Name>NxtMotor</Name>
+      <Label>NXT Motor</Label>
+      <Target>PBR</Target>
+      <Direction>Output</Direction>
+      <AutoID>7</AutoID>
+      <HardwareIcon Path="Hardware_NXT_Motor.png" />
+      <Mode Name="L-Motor-Deg" ID="0" Unit="Deg" />
+      <Mode Name="L-Motor-Rot" ID="1" Unit="Rot" />
+    </Hardware>
+    <!-- TODO.josh.keeler: Do I need this for encoder sensor -->
+    <!--<Hardware>    <Name>Motor</Name>    <Target>NXT</Target>    <Direction>Input</Direction>    <AutoID>7</AutoID>  </Hardware>-->
+    <!-- Empty Sensors -->
+    <Hardware>
+      <Name>Blank</Name>
+      <Label>None</Label>
+      <Target>NXT</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Blank.png" />
+    </Hardware>
+    <Hardware>
+      <Name>Blank</Name>
+      <Label>None</Label>
+      <Target>NXT</Target>
+      <Direction>Output</Direction>
+      <HardwareIcon Path="Blank.png" />
+    </Hardware>
+    <Hardware>
+      <Name>Blank</Name>
+      <Label>None</Label>
+      <Target>PBR</Target>
+      <Direction>Input</Direction>
+      <HardwareIcon Path="Blank.png" />
+    </Hardware>
+    <Hardware>
+      <Name>Blank</Name>
+      <Label>None</Label>
+      <Target>PBR</Target>
+      <Direction>Output</Direction>
+      <HardwareIcon Path="Blank.png" />
+    </Hardware>
+  </Hardwares>
+</EditorDefinitions>

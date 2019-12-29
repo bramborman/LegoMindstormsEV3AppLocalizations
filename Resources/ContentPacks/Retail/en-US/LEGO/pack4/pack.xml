@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPack>
+<version>1.0.0</version>
+<OnlyShowForEditorLanguage>en-US</OnlyShowForEditorLanguage>
+<img src="assets/0.png"></img>
+<idlelastimage src=""></idlelastimage>
+<actionimage src="assets/1.png"></actionimage>
+<actionLastimage src="assets/2.png"></actionLastimage>
+<staticimage src="assets/3.png"></staticimage>
+<mouseoverimage src="assets/4.png"></mouseoverimage>
+<mouseenterimage src="assets/5.png"></mouseenterimage>
+<mouseleaveimage src="assets/6.png"></mouseleaveimage>
+<titleimage src="assets/7.png"></titleimage>
+<point1title>Grasping Grippers</point1title>
+<point2title>Sturdy Tracks</point2title>
+<point3title>Remote Command</point3title>
+<point1coord>306, 430, 25, 25</point1coord>
+<point2coord>422, 451, 25, 25</point2coord>
+<point3coord>304,143,25,25</point3coord>
+<point1desc>GRIPP3R can lift almost anything that comes into its Grasping Grippers.</point1desc>
+<point2desc>These tracks ensure GRIPP3R drives steadily while carrying a heavy load.</point2desc>
+<point3desc>Using the Infrared Sensor, it can receive commands remotely so you can let it lift what you want.</point3desc>
+<point1action>true</point1action>
+<point2action>false</point2action>
+<point3action>false</point3action>
+    <projectPath>projects/0.ev3</projectPath>
+<difficultylevel>3</difficultylevel>
+</ContentPack>

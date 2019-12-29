@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Categories>
+  <Category Name="Expressions" DisplayName="Expressions" />
+  <Category Name="Eyes" DisplayName="Eyes" />
+  <Category Name="Information" DisplayName="Information" />
+  <Category Name="LEGO" DisplayName="LEGO" />
+  <Category Name="Objects" DisplayName="Objects" />
+  <Category Name="Progress" DisplayName="Progress" />
+  <Category Name="System" DisplayName="System" />
+</Categories>

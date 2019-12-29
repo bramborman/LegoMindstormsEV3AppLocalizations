@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPack>
+<version>1.0.0</version>
+<OnlyShowForEditorLanguage>en-US</OnlyShowForEditorLanguage>
+<img src="assets/0.png"></img>
+<idlelastimage src="assets/1.png"></idlelastimage>
+<actionimage src="assets/2.png"></actionimage>
+<actionLastimage src="assets/3.png"></actionLastimage>
+<staticimage src="assets/4.png"></staticimage>
+<mouseoverimage src="assets/5.png"></mouseoverimage>
+<mouseenterimage src="assets/6.png"></mouseenterimage>
+<mouseleaveimage src="assets/7.png"></mouseleaveimage>
+<titleimage src="assets/8.png"></titleimage>
+<point1title>Aim and Shoot</point1title>
+<point2title>Move How You Want</point2title>
+<point3title>Seek or Command</point3title>
+<point1coord>535, 416, 25, 25</point1coord>
+<point2coord>412, 722, 25, 25</point2coord>
+<point3coord>314,207,25,25</point3coord>
+<point1desc>With his Blasting Bazooka, EV3RSTORM can shoot either upwards or straight, depending on the distance to the target.</point1desc>
+<point2desc>These tracked skates enable EV3RSTORM to walk, drive or skate.</point2desc>
+<point3desc>The Infrared sensor gives EV3RSTORM the ability to detect objects, follow the Infrared Beacon and receive commands remotely.</point3desc>
+<point1action>true</point1action>
+<point2action>false</point2action>
+<point3action>false</point3action>
+    <projectPath>projects/0.ev3</projectPath>
+<difficultylevel>2</difficultylevel>
+</ContentPack>

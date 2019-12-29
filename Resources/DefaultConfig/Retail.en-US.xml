@@ -1,0 +1,27 @@
+﻿<config>
+  <globals />
+  <defaults>
+    <appId>ev3_desktop_retail</appId>
+    <locale>en-US</locale>
+    <version>1.0.0</version>
+  </defaults>
+  <app-specifics>
+    <availableAppVersion>1.2.3</availableAppVersion>
+    <appUpdateURL>http://lego.com/en-us/go/1/swupdate</appUpdateURL>
+    <availableFirmwareVersion>1.6</availableFirmwareVersion>
+    <firmwareUpdateURL>http://lego.com/en-us/go/1/fwupdate</firmwareUpdateURL>
+    <minimumVersion>1.2.0</minimumVersion>
+    <minimumVersionText>New features have been added to this app. Please upgrade your app through your store.</minimumVersionText>
+    <killSwitch>0</killSwitch>
+    <killSwitchText>This app is no longer being maintained by The LEGO Group. Please delete it from your device.</killSwitchText>
+    <whatsNewURL>http://www.lego.com</whatsNewURL>
+    <whatsNewUpdateVersion>-1</whatsNewUpdateVersion>
+    <whatsNewTeacherOnly>0</whatsNewTeacherOnly>
+    <helpcontents>https://ev3-help-online.api.education.lego.com/Retail/en-us</helpcontents>
+    <cookiePolicy>http://lego.com/go/7/cookie</cookiePolicy>
+    <privacyPolicy>http://lego.com/go/7/privacy</privacyPolicy>
+    <launchProblem>http://legoeducation.com/EV3launchissues</launchProblem>
+    <share>http://lego.com/en-us/go/1/share</share>
+    <feedback>http://lego.com/en-us/go/26</feedback>
+  </app-specifics>
+</config>

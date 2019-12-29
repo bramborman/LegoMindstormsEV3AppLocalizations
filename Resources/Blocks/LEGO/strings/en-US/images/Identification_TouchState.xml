@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="Released" DisplayName="Released" />
+  <Entry Name="Pushed" DisplayName="Pressed" />
+  <Entry Name="Bumped" DisplayName="Bumped" />
+</Definition>

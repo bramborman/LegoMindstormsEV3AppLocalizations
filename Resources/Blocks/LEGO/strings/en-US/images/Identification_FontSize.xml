@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+    <Entry Name="0" DisplayName="Normal"/>
+    <Entry Name="1" DisplayName="Bold"/>
+    <Entry Name="2" DisplayName="Large"/>
+</Definition>

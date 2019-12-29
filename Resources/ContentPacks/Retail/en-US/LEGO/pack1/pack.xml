@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPack>
+<version>1.0.0</version>
+<OnlyShowForEditorLanguage>en-US</OnlyShowForEditorLanguage>
+<img src="assets/0.png"></img>
+<idlelastimage src="assets/1.png"></idlelastimage>
+<actionimage src="assets/2.png"></actionimage>
+<actionLastimage src="assets/3.png"></actionLastimage>
+<staticimage src="assets/4.png"></staticimage>
+<mouseoverimage src="assets/5.png"></mouseoverimage>
+<mouseenterimage src="assets/6.png"></mouseenterimage>
+<mouseleaveimage src="assets/7.png"></mouseleaveimage>
+<titleimage src="assets/8.png"></titleimage>
+<point1title>Agile Turning</point1title>
+<point2title>Search for Targets</point2title>
+<point3title>Lightning Tail</point3title>
+<point1coord>511, 292, 25, 25</point1coord>
+<point2coord>417, 336, 25, 25</point2coord>
+<point3coord>344,140,25,25</point3coord>
+<point1desc>SPIK3R can turn around quickly to search for enemies to attack.</point1desc>
+<point2desc>With the Infrared Sensor it can detect objects and the Infrared Beacon.</point2desc>
+<point3desc>Powered by a Large Motor, its Lightning Tail can shoot at targets far away.</point3desc>
+<point1action>true</point1action>
+<point2action>false</point2action>
+<point3action>false</point3action>
+    <projectPath>projects/0.ev3</projectPath>
+<difficultylevel>2</difficultylevel>
+</ContentPack>

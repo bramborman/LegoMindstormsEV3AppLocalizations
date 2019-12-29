@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+  <Entry Name="Channel1" DisplayName="Channel 1" />
+  <Entry Name="Channel2" DisplayName="Channel 2" />
+  <Entry Name="Channel3" DisplayName="Channel 3" />
+  <Entry Name="Channel4" DisplayName="Channel 4" />
+</Definition>

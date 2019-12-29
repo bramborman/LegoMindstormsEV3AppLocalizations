@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorStrings>
+  <PolyGroups ModuleName="ThirdPartySample">
+    <PolyGroup Name="ThirdPartySample" DisplayName="English Third party test">
+      <Description><![CDATA[<p>Context help for PolyGroup <b>Third party test</b></p>]]></Description>
+      <Parameter Name="a" DisplayName="English A">
+        <Description><![CDATA[<p>Context help for Parameter <b>A</b></p>]]></Description>
+      </Parameter>
+      <Parameter Name="b" DisplayName="English B">
+        <Description><![CDATA[<p>Context help for Parameter <b>B</b></p>]]></Description>
+      </Parameter>
+      <Parameter Name="c" DisplayName="English C">
+        <Description><![CDATA[<p>Context help for Parameter <b>C</b></p>]]></Description>
+      </Parameter>
+      <Block Mode="One" DisplayName="English One">
+        <Description><![CDATA[<p>Context help for Block <b>One</b></p>]]></Description>
+      </Block>
+    </PolyGroup>
+  </PolyGroups>
+</EditorStrings>

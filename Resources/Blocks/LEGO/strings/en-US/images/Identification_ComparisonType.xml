@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+    <Entry Name="Equal" DisplayName="Equal To"/>
+    <Entry Name="NotEqual" DisplayName="Not Equal To"/>
+    <Entry Name="Greater" DisplayName="Greater Than"/>
+    <Entry Name="GreaterEqual" DisplayName="Greater Than or Equal To"/>
+    <Entry Name="Less" DisplayName="Less Than"/>
+    <Entry Name="LessEqual" DisplayName="Less Than or Equal To"/>
+</Definition>

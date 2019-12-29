@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Lobby>
+  <FontName>
+    <MainFontName>Orbitron</MainFontName>
+    <FontFallBackValue></FontFallBackValue>
+  </FontName>
+  <LocalizedContent>
+    <OpenRecent>OPEN RECENT</OpenRecent>
+    <QuickStart>QUICK START</QuickStart>
+    <News>NEWS</News>
+    <MoreRobots>MORE ROBOTS</MoreRobots>
+	<RobotRemix>ROBOT REMIX</RobotRemix>
+    <GoBack>Go Back</GoBack>
+    <Build>Build &amp; </Build>
+	<Program>Program</Program>
+    <Info>Info</Info>
+    <OpenProject>Open Project... </OpenProject>
+    <Download>DOWNLOAD</Download>
+    <Loading>LOADING...</Loading>
+    <Update>UPDATE</Update>
+    <UpgradeMessage>Do you want to update this project and overwrite the existing project?</UpgradeMessage>
+    <Community>VISIT</Community>
+	<RemixCommunity>VISIT</RemixCommunity>
+    <UrlForDownloadXml>
+      <RssFeed>http://LEGO.com/en-us/go/1/rss</RssFeed>
+      <BonusModel>http://LEGO.com/en-us/go/1/bonusmodels</BonusModel>
+      <CommunityLink>http://LEGO.com/en-us/go/1/community</CommunityLink>
+      <RobotRemixProjects>http://LEGO.com/en-us/go/1/robotremixprojects</RobotRemixProjects>
+      <RobotRemixLink>http://LEGO.com/en-us/go/1/robotremix</RobotRemixLink>
+    </UrlForDownloadXml>
+    <QuickStartItems>
+      <GettingStarted>
+        <title>Getting Started</title>
+        <image src="QuickStartItems/0.png"></image>
+        <video>QuickStartItems/1.mp4</video>
+      </GettingStarted>
+      <SoftwareOverview>
+        <title>Software Overview</title>
+        <image src="QuickStartItems/2.png"></image>
+        <video>QuickStartItems/3.mp4</video>
+      </SoftwareOverview>
+      <ContentEditor>
+        <title>Content Editor</title>
+        <image src="QuickStartItems/4.png"></image>
+        <video>QuickStartItems/5.mp4</video>
+      </ContentEditor>
+      <UserGuide>
+        <title>User Guide</title>
+        <image src="QuickStartItems/6.png"></image>
+        <editorhelpcontent>ev3HelpDirect://editor/ev3_user_guide.pdf</editorhelpcontent>
+      </UserGuide>
+      <EV3Help>
+        <title>EV3 Help</title>
+        <image src="QuickStartItems/7.png"></image>
+        <editorhelpcontent>ev3HelpDirect://editor/index.html</editorhelpcontent>
+      </EV3Help>
+    </QuickStartItems>
+
+  </LocalizedContent>
+</Lobby>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definition>
+    <Entry Name="1" DisplayName="Port 1"/>
+    <Entry Name="2" DisplayName="Port 2"/>
+    <Entry Name="3" DisplayName="Port 3"/>
+    <Entry Name="4" DisplayName="Port 4"/>
+</Definition>

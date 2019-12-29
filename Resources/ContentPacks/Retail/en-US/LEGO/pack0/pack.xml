@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPack>
+<version>1.0.0</version>
+<OnlyShowForEditorLanguage>en-US</OnlyShowForEditorLanguage>
+<img src="assets/0.png"></img>
+<idlelastimage src="assets/1.png"></idlelastimage>
+<actionimage src="assets/2.png"></actionimage>
+<actionLastimage src=""></actionLastimage>
+<staticimage src="assets/3.png"></staticimage>
+<mouseoverimage src="assets/4.png"></mouseoverimage>
+<mouseenterimage src="assets/5.png"></mouseenterimage>
+<mouseleaveimage src="assets/6.png"></mouseleaveimage>
+<titleimage src="assets/7.png"></titleimage>
+<point1title>Use Tools</point1title>
+<point2title>Sturdy Tracks</point2title>
+<point3title>Remote Command</point3title>
+<point1coord>271, 97, 25, 25</point1coord>
+<point2coord>363, 194, 25, 25</point2coord>
+<point3coord>195,92,25,25</point3coord>
+<point1desc>TRACK3R has four interchangeable tools you can use to accomplish different tasks.</point1desc>
+<point2desc>With these sturdy tracks powered by the Large Motors, it is no problem to maneuver on difficult terrain.</point2desc>
+<point3desc>TRACK3R has an Infrared Sensor on the back, so you can control it remotely and it can detect objects coming from behind.</point3desc>
+<point1action>true</point1action>
+<point2action>false</point2action>
+<point3action>false</point3action>
+    <projectPath>projects/0.ev3</projectPath>
+<difficultylevel>1</difficultylevel>
+</ContentPack>
