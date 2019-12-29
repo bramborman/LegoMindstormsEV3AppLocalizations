@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Definition>
-  <Entry Name="Released" DisplayName="Released" />
-  <Entry Name="Pushed" DisplayName="Pressed" />
-  <Entry Name="Bumped" DisplayName="Bumped" />
+  <Entry Name="Released" DisplayName="Puštěno" />
+  <Entry Name="Pushed" DisplayName="Zmáčknuto" />
+  <Entry Name="Bumped" DisplayName="Zmáčknuto a puštěno" />
 </Definition>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Definition>
-    <Entry Name="Green" DisplayName="Green"/>
-    <Entry Name="Orange" DisplayName="Orange"/>
-    <Entry Name="Red" DisplayName="Red"/>
+    <Entry Name="Green" DisplayName="Zelená"/>
+    <Entry Name="Orange" DisplayName="Oranžová"/>
+    <Entry Name="Red" DisplayName="Červená"/>
 </Definition>

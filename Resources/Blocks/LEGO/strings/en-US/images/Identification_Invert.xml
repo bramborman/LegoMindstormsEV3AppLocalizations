@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Definition>
-    <Entry Name="False" DisplayName="False"/>
-    <Entry Name="True" DisplayName="True"/>
+    <Entry Name="False" DisplayName="Nepravda"/>
+    <Entry Name="True" DisplayName="Pravda"/>
 </Definition>

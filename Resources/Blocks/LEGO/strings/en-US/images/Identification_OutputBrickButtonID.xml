@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Definition>
-  <Entry Name="None" DisplayName="Nothing" />
-  <Entry Name="Left" DisplayName="Left" />
-  <Entry Name="Center" DisplayName="Center" />
-  <Entry Name="Right" DisplayName="Right" />
-  <Entry Name="Up" DisplayName="Up" />
-  <Entry Name="Down" DisplayName="Down" />
+  <Entry Name="None" DisplayName="Nic" />
+  <Entry Name="Left" DisplayName="Vlevo" />
+  <Entry Name="Center" DisplayName="Uprostřed" />
+  <Entry Name="Right" DisplayName="Doprava" />
+  <Entry Name="Up" DisplayName="Nahoru" />
+  <Entry Name="Down" DisplayName="Dolů" />
 </Definition>

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Definition>
-  <Entry Name="Zero" DisplayName="Button ID 0" />
-  <Entry Name="One" DisplayName="Button ID 1" />
-  <Entry Name="Two" DisplayName="Button ID 2" />
-  <Entry Name="Three" DisplayName="Button ID 3" />
-  <Entry Name="Four" DisplayName="Button ID 4" />
-  <Entry Name="Five" DisplayName="Button ID 5" />
-  <Entry Name="Six" DisplayName="Button ID 6" />
-  <Entry Name="Seven" DisplayName="Button ID 7" />
-  <Entry Name="Eight" DisplayName="Button ID 8" />
-  <Entry Name="Nine" DisplayName="Button ID 9" />
-  <Entry Name="Ten" DisplayName="Button ID 10" />
-  <Entry Name="Eleven" DisplayName="Button ID 11" />
+  <Entry Name="Zero" DisplayName="Tlačítko ID 0" />
+  <Entry Name="One" DisplayName="Tlačítko ID 1" />
+  <Entry Name="Two" DisplayName="Tlačítko ID 2" />
+  <Entry Name="Three" DisplayName="Tlačítko ID 3" />
+  <Entry Name="Four" DisplayName="Tlačítko ID 4" />
+  <Entry Name="Five" DisplayName="Tlačítko ID 5" />
+  <Entry Name="Six" DisplayName="Tlačítko ID 6" />
+  <Entry Name="Seven" DisplayName="Tlačítko ID 7" />
+  <Entry Name="Eight" DisplayName="Tlačítko ID 8" />
+  <Entry Name="Nine" DisplayName="Tlačítko ID 9" />
+  <Entry Name="Ten" DisplayName="Tlačítko ID 10" />
+  <Entry Name="Eleven" DisplayName="Tlačítko ID 11" />
 </Definition>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Definition>
-  <Entry Name="WaitForCompletion" DisplayName="Wait for Completion" />
-  <Entry Name="PlayOnce" DisplayName="Play Once" />
-  <Entry Name="Repeat" DisplayName="Repeat" />
+  <Entry Name="WaitForCompletion" DisplayName="Počkat na dokončení" />
+  <Entry Name="PlayOnce" DisplayName="Přehrát jednou" />
+  <Entry Name="Repeat" DisplayName="Opakovat" />
 </Definition>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Definition>
-  <Entry Name="PerSecond" DisplayName="Samples per Second" />
-  <Entry Name="SecondsBetweenSamples" DisplayName="Seconds between Samples" />
+  <Entry Name="PerSecond" DisplayName="Počet vzorků za sekundu" />
+  <Entry Name="SecondsBetweenSamples" DisplayName="Počet sekund mezi vzorky" />
 </Definition>

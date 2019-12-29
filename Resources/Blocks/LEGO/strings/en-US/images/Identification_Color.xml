@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Definition>
-  <Entry Name="NoColor" DisplayName="No Color" />
-  <Entry Name="Black" DisplayName="Black" />
-  <Entry Name="Blue" DisplayName="Blue" />
-  <Entry Name="Green" DisplayName="Green" />
-  <Entry Name="Yellow" DisplayName="Yellow" />
-  <Entry Name="Red" DisplayName="Red" />
-  <Entry Name="White" DisplayName="White" />
-  <Entry Name="Brown" DisplayName="Brown" />
+  <Entry Name="NoColor" DisplayName="Žádná barva" />
+  <Entry Name="Black" DisplayName="Černá" />
+  <Entry Name="Blue" DisplayName="Modrá" />
+  <Entry Name="Green" DisplayName="Zelená" />
+  <Entry Name="Yellow" DisplayName="Žlutá" />
+  <Entry Name="Red" DisplayName="Červená" />
+  <Entry Name="White" DisplayName="Bílá" />
+  <Entry Name="Brown" DisplayName="Hnědá" />
 </Definition>

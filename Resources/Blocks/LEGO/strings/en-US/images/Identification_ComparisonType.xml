@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Definition>
-    <Entry Name="Equal" DisplayName="Equal To"/>
-    <Entry Name="NotEqual" DisplayName="Not Equal To"/>
-    <Entry Name="Greater" DisplayName="Greater Than"/>
-    <Entry Name="GreaterEqual" DisplayName="Greater Than or Equal To"/>
-    <Entry Name="Less" DisplayName="Less Than"/>
-    <Entry Name="LessEqual" DisplayName="Less Than or Equal To"/>
+    <Entry Name="Equal" DisplayName="Stejné jako"/>
+    <Entry Name="NotEqual" DisplayName="Ne Stejné jako"/>
+    <Entry Name="Greater" DisplayName="Větší než"/>
+    <Entry Name="GreaterEqual" DisplayName="Větší než, nebo Stejné jako"/>
+    <Entry Name="Less" DisplayName="Menší než"/>
+    <Entry Name="LessEqual" DisplayName="Menší než, nebo Stejné jako"/>
 </Definition>
