@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Categories>
-  <Category Name="Animals" DisplayName="Animals" />
-  <Category Name="Colors" DisplayName="Colors" />
-  <Category Name="Communication" DisplayName="Communication" />
-  <Category Name="Expressions" DisplayName="Expressions" />
-  <Category Name="Information" DisplayName="Information" />
-  <Category Name="Mechanical" DisplayName="Mechanical" />
-  <Category Name="Movements" DisplayName="Movements" />
-  <Category Name="Numbers" DisplayName="Numbers" />
-  <Category Name="System" DisplayName="System" />
+  <Category Name="Animals" DisplayName="Zvířata" />
+  <Category Name="Colors" DisplayName="Barvy" />
+  <Category Name="Communication" DisplayName="Komunikace" />
+  <Category Name="Expressions" DisplayName="Výrazy" />
+  <Category Name="Information" DisplayName="Informace" />
+  <Category Name="Mechanical" DisplayName="Mechanické" />
+  <Category Name="Movements" DisplayName="Pohyby" />
+  <Category Name="Numbers" DisplayName="Čísla" />
+  <Category Name="System" DisplayName="Systém" />
 </Categories>

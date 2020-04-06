@@ -87,9 +87,9 @@
         <DisplayName>Advanced</DisplayName>
         <Reference Type="VILib" Name="MediumMotorAdvanced.vix"/>
         <ParamInfo Name="MotorPort" DisplayName="MotorPort" PortType="OutputPort" Visibility="Static"/>
-        <ParamInfo Name="Speed" DisplayName="Power" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml"/>
+        <ParamInfo Name="Speed" DisplayName="Výkon" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml"/>
         <ParamInfo Name="Rotations" DisplayName="Rotations" Identification="Identification_NumberRotations.png"/>
-        <ParamInfo Name="Brake At End" DisplayName="Brake at End" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="Identification_BrakeAtEnd.xml" Configuration="Identification_BrakeAtEnd.xml"/>
+        <ParamInfo Name="Brake At End" DisplayName="Na konci zabrzdit" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="Identification_BrakeAtEnd.xml" Configuration="Identification_BrakeAtEnd.xml"/>
         <ParamInfo Name="Interrupt" DisplayName="Interrupt" Direction="Input" DataType="Int32" DefaultValue="0" Visibility="Hidden"/>
         <Flags>Motor</Flags>
         <Hardware>MotorMedium</Hardware>
@@ -2575,7 +2575,7 @@
         <ParamInfo Name="Power" Configuration="SliderVertical.custom" Identification="Identification_Speed.xml" DataType="Single" Direction="Input" EducationDefaultValue="50" RetailDefaultValue="75" />
       </Block>
   </PolyGroup>
-    <!--<PolyGroup Name="Comment" DisplayName="Comment" BlockFamily="Advanced">
+    <!--<PolyGroup Name="Comment" DisplayName="Komentář" BlockFamily="Advanced">
       <Block>
         <DisplayName>Comment</DisplayName>
         <Reference Type="Comment" Name="Comment"/>

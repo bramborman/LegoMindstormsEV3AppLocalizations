@@ -2,7 +2,7 @@
 <EditorStrings>
   <PolyGroups ModuleName="ThirdPartySample">
     <PolyGroup Name="ThirdPartySample" DisplayName="English Third party test">
-      <Description><![CDATA[<p>Context help for PolyGroup <b>Third party test</b></p>]]></Description>
+      <Description><![CDATA[<p>Kontextová nápověda pro PolyGroup <b>Third party test</b></p>]]></Description>
       <Parameter Name="a" DisplayName="English A">
         <Description><![CDATA[<p>Context help for Parameter <b>A</b></p>]]></Description>
       </Parameter>
