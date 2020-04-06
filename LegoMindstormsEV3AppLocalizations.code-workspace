@@ -1,0 +1,59 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Install localization and Run EV3 app",
+                "dependsOn": [
+                    "Install localization",
+                    "Run EV3 app"
+                ],
+                "dependsOrder": "sequence",
+                "promptOnClose": true,
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                },
+                "problemMatcher": []
+            },
+            {
+                "label": "Install localization",
+                "type": "shell",
+                "command": ". ./Scripts.ps1; Install-Localization 'cs-CZ'",
+                "promptOnClose": true,
+                "problemMatcher": []
+            },
+            {
+                "label": "Run EV3 app",
+                "type": "shell",
+                "command": ". ./Scripts.ps1; Start-EV3App",
+                "isBackground": true,
+                "problemMatcher": []
+            },
+            {
+                "label": "Configure LEGO MINDSTORMS EV3 app installation path",
+                "type": "shell",
+                "command": ". ./Scripts.ps1; New-EV3InstallLocationFile ${input:path}",
+                "problemMatcher": []
+            }
+        ],
+        "inputs": [
+            {
+                "id": "path",
+                "description": "LEGO MINDSTORMS EV3 installation path",
+                "default": "C:\\Program Files (x86)\\LEGO Software\\LEGO MINDSTORMS EV3 Home Edition",
+                "type": "promptString"
+            }
+        ]
+    },
+    "extensions": {
+        "recommendations": [
+            "dotjoshjohnson.xml"
+        ]
+    }
+}
