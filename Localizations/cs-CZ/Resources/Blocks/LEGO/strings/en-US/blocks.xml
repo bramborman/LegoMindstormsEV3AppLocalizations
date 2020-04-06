@@ -221,7 +221,7 @@
       <Parameter Name="Y2" DisplayName="Y2">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Povolené hodnoty:</b> 0 až 127<br/><b>Poznámky:</b> Y coordinate of the second point in a line</p>]]></Description>
       </Parameter>
-      <Parameter Name="Radius" DisplayName="Radius">
+      <Parameter Name="Radius" DisplayName="Poloměr">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Povolené hodnoty:</b> ≥ 0<br/><b>Poznámky:</b> Radius of a circle in pixels</p>]]></Description>
       </Parameter>
       <Parameter Name="Width" DisplayName="Šířka">
@@ -286,13 +286,13 @@
       <Block Mode="Stop" DisplayName="Stop">
         <Description><![CDATA[The Stop mode stops any sound that is currently being played by the EV3 Brick. This is usually used to stop a sound that was started earlier in the program by a Sound Block that didn’t wait for the sound to complete.]]></Description>
       </Block>
-      <Block Mode="File" DisplayName="Play File">
+      <Block Mode="File" DisplayName="Přehrát soubor">
         <Description><![CDATA[The Play File mode plays a pre-recorded sound file.The File Name input is at the top of the block. It lets you choose from a list of sound effects, spoken words and phrases. The sounds in the “LEGO Sounds” category are the sound files that are included with the EV3 Software. The sounds listed in the “Project Sounds” category are the sounds that have already been used in your project. This makes it easy to use the same sound multiple times in a program or project. If you choose “Wired” from the File Name input on the top of the block, a File Name input appears in the inputs area of the Sound block. This allows you to supply the name of the sound file with a Data Wire.Note that you need to add the sound file to your Project first by selecting it in the File Name input.The Volume input controls how loud the sound will be. The Play Type input controls whether the block will wait for the sound to finish before the program continues to the next block, and whether the sound will repeat.]]></Description>
       </Block>
-      <Block Mode="Tone" DisplayName="Play Tone">
+      <Block Mode="Tone" DisplayName="Přehrát tón">
         <Description><![CDATA[The Play Tone mode plays a tone of a specified frequency. The frequency of the tone controls the pitch, in other words, how high or low the sound is.The Frequency input specifies the frequency of the tone in Hz (cycles per second). You can type a number for the frequency or choose a frequency from the list of standard musical note frequencies.The Duration input controls how long the tone will last, in seconds.]]></Description>
       </Block>
-      <Block Mode="Note" DisplayName="Play Note">
+      <Block Mode="Note" DisplayName="Přehrát notu">
         <Description><![CDATA[The Play Note mode plays a musical note.The Note input lets you choose the note from a piano keyboard control.The Duration input controls how long the note will last in seconds.]]></Description>
       </Block>
     </PolyGroup>
@@ -414,7 +414,7 @@
       <Parameter Name="arrayOutBoolean" DisplayName="Array Out">
         <Description><![CDATA[<p><b>Types:</b> Numeric Array, <br/>Logic Array<br/><b>Poznámky:</b> Array result of the operation</p>]]></Description>
       </Parameter>
-      <Category Name="Append" DisplayName="Append">
+      <Category Name="Append" DisplayName="Připojit">
         <Block Mode="Append_Numeric" DisplayName="Číslo">
           <Description><![CDATA[The Append mode adds an element to the end of an array. You can also create a new array. The Array In input specifies an existing array, and the Value specifies the element to add to the end of the array. If you leave Array In blank, a new array will be created with just the new element in it.]]></Description>
         </Block>
@@ -459,16 +459,16 @@
       <Parameter Name="Result" DisplayName="Výsledek">
         <Description><![CDATA[<p><b>Datový typ:</b> Logická hodnota<br/><b>Poznámky:</b> Result of the Logic operation (True or False)</p>]]></Description>
       </Parameter>
-      <Block Mode="And" DisplayName="And">
+      <Block Mode="And" DisplayName="AND (A - logický součin)">
         <Description><![CDATA[<p><b>Inputs Used:</b> A, B<br/><b>Result:</b> True if both A and B are True,<br/>otherwise False</p>]]></Description>
       </Block>
-      <Block Mode="Or" DisplayName="Or">
+      <Block Mode="Or" DisplayName="OR (NEBO - logický součet)">
         <Description><![CDATA[<p><b>Inputs Used:</b> A, B<br/><b>Result:</b> True if either A or B (or both) is True,<br/>False if both A and B are False</p>]]></Description>
       </Block>
-      <Block Mode="XOR" DisplayName="XOR">
+      <Block Mode="XOR" DisplayName="XOR (EXKLUZIVNÍ OR)">
         <Description><![CDATA[<p><b>Inputs Used:</b> A, B<br/><b>Result:</b> True if exactly one of A and B is True,<br/>False if both A and B are True,<br/>False if both A and B are False</p>]]></Description>
       </Block>
-      <Block Mode="Not" DisplayName="Not">
+      <Block Mode="Not" DisplayName="NOT (NEGACE - převrácení hodnoty)">
         <Description><![CDATA[<p><b>Inputs Used:</b> A<br/><b>Result:</b> True if A is False,<br/>False if A is True</p>]]></Description>
       </Block>
     </PolyGroup>
@@ -526,8 +526,8 @@
     </PolyGroup>
 
     <PolyGroup Name="Round" DisplayName="Zaokrouhlit">
-      <Description><![CDATA[<p>Kontextová nápověda pro PolyGroup <b>Round</b></p>]]></Description>
-      <Parameter Name="Input" DisplayName="Input">
+      <Description><![CDATA[<p>Kontextová nápověda pro PolyGroup <b>Zaokrouhlit</b></p>]]></Description>
+      <Parameter Name="Input" DisplayName="Vstup">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Poznámky:</b> Number to round</p>]]></Description>
       </Parameter>
       <Parameter Name="Output Result" DisplayName="Výsledek">
@@ -536,13 +536,13 @@
       <Parameter Name="Number of Decimals" DisplayName="Number of Decimals">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Poznámky:</b> Number of decimal places to keep in Truncate mode.</p>]]></Description>
       </Parameter>
-      <Block Mode="Nearest" DisplayName="To Nearest">
+      <Block Mode="Nearest" DisplayName="K nejbližšímu">
         <Description><![CDATA[The Round To Nearest, Round Up, and Round Down modes round a decimal number in the Input to an integer value in the Result.  Round To Nearest uses standard rounding rules to round to the nearest integer. Round Up always rounds up, and Round Down always rounds down.]]></Description>
       </Block>
-      <Block Mode="Up" DisplayName="Round Up">
+      <Block Mode="Up" DisplayName="Zaokrouhlit nahoru">
         <Description><![CDATA[The Round To Nearest, Round Up, and Round Down modes round a decimal number in the Input to an integer value in the Result.  Round To Nearest uses standard rounding rules to round to the nearest integer. Round Up always rounds up, and Round Down always rounds down.]]></Description>
       </Block>
-      <Block Mode="Down" DisplayName="Round Down">
+      <Block Mode="Down" DisplayName="Zaokrouhlit dolů">
         <Description><![CDATA[The Round To Nearest, Round Up, and Round Down modes round a decimal number in the Input to an integer value in the Result.  Round To Nearest uses standard rounding rules to round to the nearest integer. Round Up always rounds up, and Round Down always rounds down.]]></Description>
       </Block>
       <Block Mode="Truncate" DisplayName="Truncate">
@@ -583,13 +583,13 @@
 
     <PolyGroup Name="Range" DisplayName="Rozsah">
       <Description><![CDATA[<p>Kontextová nápověda pro PolyGroup <b>Range</b></p>]]></Description>
-      <Parameter Name="Test Value" DisplayName="Test Value">
+      <Parameter Name="Test Value" DisplayName="Otestovat hodnotu">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Poznámky:</b> Number to test</p>]]></Description>
       </Parameter>
-      <Parameter Name="Lower Bound" DisplayName="Lower Bound">
+      <Parameter Name="Lower Bound" DisplayName="Dolní hranice">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Poznámky:</b> Lowest number in range</p>]]></Description>
       </Parameter>
-      <Parameter Name="Upper Bound" DisplayName="Upper Bound">
+      <Parameter Name="Upper Bound" DisplayName="Horní hranice">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Poznámky:</b> Highest number in range</p>]]></Description>
       </Parameter>
       <Parameter Name="Result" DisplayName="Výsledek">
@@ -623,17 +623,17 @@
     </PolyGroup>
 
     <PolyGroup Name="Random" DisplayName="Náhodné číslo">
-      <Description><![CDATA[<p>Kontextová nápověda pro PolyGroup <b>Random</b></p>]]></Description>
-      <Parameter Name="Lower" DisplayName="Lower Bound">
+      <Description><![CDATA[<p>Kontextová nápověda pro PolyGroup <b>Náhodné číslo</b></p>]]></Description>
+      <Parameter Name="Lower" DisplayName="Dolní hranice">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Povolené hodnoty:</b> Jakékoliv číslo<br/><b>Poznámky:</b> Lower bound for Numeric output</p>]]></Description>
       </Parameter>
-      <Parameter Name="Upper" DisplayName="Upper Bound">
+      <Parameter Name="Upper" DisplayName="Horní hranice">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Povolené hodnoty:</b> Jakékoliv číslo<br/><b>Poznámky:</b> Upper bound for Numeric output</p>]]></Description>
       </Parameter>
       <Parameter Name="Number" DisplayName="Hodnota">
         <Description><![CDATA[<p><b>Datový typ:</b> Numeric or Logic<br/><b>Poznámky:</b> Numeric in Numeric mode<br/>Logic in Logic mode</p>]]></Description>
       </Parameter>
-      <Parameter Name="Percent True" DisplayName="Probability of True">
+      <Parameter Name="Percent True" DisplayName="Pravděpodobnost Pravdy">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Povolené hodnoty:</b> 0 až 100<br/><b>Poznámky:</b> Percentage probability of True result for Logic output</p>]]></Description>
       </Parameter>
       <Parameter Name="Result" DisplayName="Hodnota">
@@ -709,7 +709,7 @@
       <Parameter Name="String" DisplayName="String">
         <Description><![CDATA[<p><b>Datový typ:</b> Text<br/><b>Poznámky:</b> Used to select a Case in Text mode.</p>]]></Description>
       </Parameter>
-      <Parameter Name="Number" DisplayName="Number">
+      <Parameter Name="Number" DisplayName="Číslo">
         <Description><![CDATA[<p><b>Datový typ:</b> Číslo<br/><b>Poznámky:</b> Used to select a Case in Numeric mode.</p>]]></Description>
       </Parameter>
       <Block Mode="Boolean" DisplayName="Logická hodnota">
